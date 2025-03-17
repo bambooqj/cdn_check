@@ -24,7 +24,7 @@ CDN检测工具是一个插件化的网络情报分析框架，主要用于检�
 
 ```bash
 # 克隆项目
-git clone https://github.com/example/cdn-checker.git
+git clone https://github.com/bambooqj/cdn_check.git
 cd cdn-checker
 
 # 安装依赖
