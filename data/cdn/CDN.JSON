@@ -1,0 +1,1334 @@
+{
+  "Item":[
+    {
+      "Domain": "15cdn.com",
+      "Name": "腾正安全加速（原 15CDN）",
+      "Description": "https://www.15cdn.com"
+    },
+    {
+      "Domain": "tzcdn.cn",
+      "Name": "腾正安全加速（原 15CDN）",
+      "Description": "https://www.15cdn.com"
+    },
+    {
+      "Domain": "cedexis.net",
+      "Name": "Cedexis GSLB",
+      "Description": "https://www.cedexis.com/"
+    },
+    {
+      "Domain": "cdxcn.cn",
+      "Name": "Cedexis GSLB (For China)",
+      "Description": "https://www.cedexis.com/"
+    },
+    {
+      "Domain": "qhcdn.com",
+      "Name": "360 云 CDN (由奇安信运营)",
+      "Description": "https://cloud.360.cn/doc?name=cdn"
+    },
+    {
+      "Domain": "qh-cdn.com",
+      "Name": "360 云 CDN (由奇虎 360 运营)",
+      "Description": "https://cloud.360.cn/doc?name=cdn"
+    },
+    {
+      "Domain": "qihucdn.com",
+      "Name": "360 云 CDN (由奇虎 360 运营)",
+      "Description": "https://cloud.360.cn/doc?name=cdn"
+    },
+    {
+      "Domain": "360cdn.com",
+      "Name": "360 云 CDN (由奇虎 360 运营)",
+      "Description": "https://cloud.360.cn/doc?name=cdn"
+    },
+    {
+      "Domain": "360cloudwaf.com",
+      "Name": "奇安信网站卫士",
+      "Description": "https://wangzhan.qianxin.com"
+    },
+    {
+      "Domain": "360anyu.com",
+      "Name": "奇安信网站卫士",
+      "Description": "https://wangzhan.qianxin.com"
+    },
+    {
+      "Domain": "360safedns.com",
+      "Name": "奇安信网站卫士",
+      "Description": "https://wangzhan.qianxin.com"
+    },
+    {
+      "Domain": "360wzws.com",
+      "Name": "奇安信网站卫士",
+      "Description": "https://wangzhan.qianxin.com"
+    },
+    {
+      "Domain": "akamai.net",
+      "Name": "Akamai CDN",
+      "Description": "https://www.akamai.com"
+    },
+    {
+      "Domain": "akamaiedge.net",
+      "Name": "Akamai CDN",
+      "Description": "https://www.akamai.com"
+    },
+    {
+      "Domain": "ytcdn.net",
+      "Name": "Akamai CDN",
+      "Description": "https://www.akamai.com"
+    },
+    {
+      "Domain": "edgesuite.net",
+      "Name": "Akamai CDN",
+      "Description": "https://www.akamai.com"
+    },
+    {
+      "Domain": "akamaitech.net",
+      "Name": "Akamai CDN",
+      "Description": "https://www.akamai.com"
+    },
+    {
+      "Domain": "akamaitechnologies.com",
+      "Name": "Akamai CDN",
+      "Description": "https://www.akamai.com"
+    },
+    {
+      "Domain": "edgekey.net",
+      "Name": "Akamai CDN",
+      "Description": "https://www.akamai.com"
+    },
+    {
+      "Domain": "tl88.net",
+      "Name": "易通锐进（Akamai 中国）由网宿承接",
+      "Description": "https://www.akamai.com"
+    },
+    {
+      "Domain": "cloudfront.net",
+      "Name": "AWS CloudFront",
+      "Description": "https://aws.amazon.com/cn/cloudfront/"
+    },
+    {
+      "Domain": "worldcdn.net",
+      "Name": "CDN.NET",
+      "Description": "https://cdn.net"
+    },
+    {
+      "Domain": "worldssl.net",
+      "Name": "CDN.NET / CDNSUN / ONAPP",
+      "Description": "https://cdn.net"
+    },
+    {
+      "Domain": "cdn77.org",
+      "Name": "CDN77",
+      "Description": "https://www.cdn77.com/"
+    },
+    {
+      "Domain": "panthercdn.com",
+      "Name": "CDNetworks",
+      "Description": "https://www.cdnetworks.com"
+    },
+    {
+      "Domain": "cdnga.net",
+      "Name": "CDNetworks",
+      "Description": "https://www.cdnetworks.com"
+    },
+    {
+      "Domain": "cdngc.net",
+      "Name": "CDNetworks",
+      "Description": "https://www.cdnetworks.com"
+    },
+    {
+      "Domain": "gccdn.net",
+      "Name": "CDNetworks",
+      "Description": "https://www.cdnetworks.com"
+    },
+    {
+      "Domain": "gccdn.cn",
+      "Name": "CDNetworks",
+      "Description": "https://www.cdnetworks.com"
+    },
+    {
+      "Domain": "akamaized.net",
+      "Name": "Akamai CDN",
+      "Description": "https://www.akamai.com"
+    },
+    {
+      "Domain": "126.net",
+      "Name": "网易云 CDN",
+      "Description": "https://www.163yun.com/product/cdn"
+    },
+    {
+      "Domain": "163jiasu.com",
+      "Name": "网易云 CDN",
+      "Description": "https://www.163yun.com/product/cdn"
+    },
+    {
+      "Domain": "amazonaws.com",
+      "Name": "AWS Cloud",
+      "Description": "https://aws.amazon.com/cn/cloudfront/"
+    },
+    {
+      "Domain": "cdn77.net",
+      "Name": "CDN77",
+      "Description": "https://www.cdn77.com/"
+    },
+    {
+      "Domain": "cdnify.io",
+      "Name": "CDNIFY",
+      "Description": "https://cdnify.com"
+    },
+    {
+      "Domain": "cdnsun.net",
+      "Name": "CDNSUN",
+      "Description": "https://cdnsun.com"
+    },
+    {
+      "Domain": "bdydns.com",
+      "Name": "百度云 CDN",
+      "Description": "https://cloud.baidu.com/product/cdn.html"
+    },
+    {
+      "Domain": "ccgslb.com.cn",
+      "Name": "蓝汛 CDN",
+      "Description": "https://cn.chinacache.com/"
+    },
+    {
+      "Domain": "ccgslb.net",
+      "Name": "蓝汛 CDN",
+      "Description": "https://cn.chinacache.com/"
+    },
+    {
+      "Domain": "ccgslb.com",
+      "Name": "蓝汛 CDN",
+      "Description": "https://cn.chinacache.com/"
+    },
+    {
+      "Domain": "ccgslb.cn",
+      "Name": "蓝汛 CDN",
+      "Description": "https://cn.chinacache.com/"
+    },
+    {
+      "Domain": "c3cache.net",
+      "Name": "蓝汛 CDN",
+      "Description": "https://cn.chinacache.com/"
+    },
+    {
+      "Domain": "c3dns.net",
+      "Name": "蓝汛 CDN",
+      "Description": "https://cn.chinacache.com/"
+    },
+    {
+      "Domain": "chinacache.net",
+      "Name": "蓝汛 CDN",
+      "Description": "https://cn.chinacache.com/"
+    },
+    {
+      "Domain": "wswebcdn.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com/"
+    },
+    {
+      "Domain": "lxdns.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com/"
+    },
+    {
+      "Domain": "wswebpic.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com/"
+    },
+    {
+      "Domain": "cloudflare.net",
+      "Name": "Cloudflare",
+      "Description": "https://www.cloudflare.com"
+    },
+    {
+      "Domain": "akadns.net",
+      "Name": "Akamai CDN",
+      "Description": "https://www.akamai.com"
+    },
+    {
+      "Domain": "chinanetcenter.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "customcdn.com.cn",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "customcdn.cn",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "51cdn.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "wscdns.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "cdn20.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "wsdvs.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "wsglb0.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "speedcdns.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "wtxcdn.com",
+      "Name": "网宿 CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "wsssec.com",
+      "Name": "网宿 WAF CDN",
+      "Description": "https://www.wangsu.com"
+    },
+    {
+      "Domain": "fastly.net",
+      "Name": "Fastly",
+      "Description": "https://www.fastly.com"
+    },
+    {
+      "Domain": "fastlylb.net",
+      "Name": "Fastly",
+      "Description": "https://www.fastly.com/"
+    },
+    {
+      "Domain": "hwcdn.net",
+      "Name": "Stackpath (原 Highwinds)",
+      "Description": "https://www.stackpath.com/highwinds"
+    },
+    {
+      "Domain": "incapdns.net",
+      "Name": "Incapsula CDN",
+      "Description": "https://www.incapsula.com"
+    },
+    {
+      "Domain": "kxcdn.com.",
+      "Name": "KeyCDN",
+      "Description": "https://www.keycdn.com/"
+    },
+    {
+      "Domain": "lswcdn.net",
+      "Name": "LeaseWeb CDN",
+      "Description": "https://www.leaseweb.com/cdn"
+    },
+    {
+      "Domain": "mwcloudcdn.com",
+      "Name": "QUANTIL (网宿)",
+      "Description": "https://www.quantil.com/"
+    },
+    {
+      "Domain": "mwcname.com",
+      "Name": "QUANTIL (网宿)",
+      "Description": "https://www.quantil.com/"
+    },
+    {
+      "Domain": "azureedge.net",
+      "Name": "Microsoft Azure CDN",
+      "Description": "https://azure.microsoft.com/en-us/services/cdn/"
+    },
+    {
+      "Domain": "msecnd.net",
+      "Name": "Microsoft Azure CDN",
+      "Description": "https://azure.microsoft.com/en-us/services/cdn/"
+    },
+    {
+      "Domain": "mschcdn.com",
+      "Name": "Microsoft Azure CDN",
+      "Description": "https://azure.microsoft.com/en-us/services/cdn/"
+    },
+    {
+      "Domain": "v0cdn.net",
+      "Name": "Microsoft Azure CDN",
+      "Description": "https://azure.microsoft.com/en-us/services/cdn/"
+    },
+    {
+      "Domain": "azurewebsites.net",
+      "Name": "Microsoft Azure App Service",
+      "Description": "https://azure.microsoft.com/en-us/services/app-service/"
+    },
+    {
+      "Domain": "azurewebsites.windows.net",
+      "Name": "Microsoft Azure App Service",
+      "Description": "https://azure.microsoft.com/en-us/services/app-service/"
+    },
+    {
+      "Domain": "trafficmanager.net",
+      "Name": "Microsoft Azure Traffic Manager",
+      "Description": "https://azure.microsoft.com/en-us/services/traffic-manager/"
+    },
+    {
+      "Domain": "cloudapp.net",
+      "Name": "Microsoft Azure",
+      "Description": "https://azure.microsoft.com"
+    },
+    {
+      "Domain": "chinacloudsites.cn",
+      "Name": "世纪互联旗下上海蓝云（承载 Azure 中国）",
+      "Description": "https://www.21vbluecloud.com/"
+    },
+    {
+      "Domain": "spdydns.com",
+      "Name": "云端智度融合 CDN",
+      "Description": "https://www.isurecloud.net/index.html"
+    },
+    {
+      "Domain": "jiashule.com",
+      "Name": "知道创宇云安全加速乐CDN",
+      "Description": "https://www.yunaq.com/jsl/"
+    },
+    {
+      "Domain": "jiasule.org",
+      "Name": "知道创宇云安全加速乐CDN",
+      "Description": "https://www.yunaq.com/jsl/"
+    },
+    {
+      "Domain": "365cyd.cn",
+      "Name": "知道创宇云安全创宇盾（政务专用）",
+      "Description": "https://www.yunaq.com/cyd/"
+    },
+    {
+      "Domain": "huaweicloud.com",
+      "Name": "华为云WAF高防云盾",
+      "Description": "https://www.huaweicloud.com/product/aad.html"
+    },
+    {
+      "Domain": "cdnhwc1.com",
+      "Name": "华为云 CDN",
+      "Description": "https://www.huaweicloud.com/product/cdn.html"
+    },
+    {
+      "Domain": "cdnhwc2.com",
+      "Name": "华为云 CDN",
+      "Description": "https://www.huaweicloud.com/product/cdn.html"
+    },
+    {
+      "Domain": "cdnhwc3.com",
+      "Name": "华为云 CDN",
+      "Description": "https://www.huaweicloud.com/product/cdn.html"
+    },
+    {
+      "Domain": "dnion.com",
+      "Name": "帝联科技",
+      "Description": "http://www.dnion.com/"
+    },
+    {
+      "Domain": "ewcache.com",
+      "Name": "帝联科技",
+      "Description": "http://www.dnion.com/"
+    },
+    {
+      "Domain": "globalcdn.cn",
+      "Name": "帝联科技",
+      "Description": "http://www.dnion.com/"
+    },
+    {
+      "Domain": "tlgslb.com",
+      "Name": "帝联科技",
+      "Description": "http://www.dnion.com/"
+    },
+    {
+      "Domain": "fastcdn.com",
+      "Name": "帝联科技",
+      "Description": "http://www.dnion.com/"
+    },
+    {
+      "Domain": "flxdns.com",
+      "Name": "帝联科技",
+      "Description": "http://www.dnion.com/"
+    },
+    {
+      "Domain": "dlgslb.cn",
+      "Name": "帝联科技",
+      "Description": "http://www.dnion.com/"
+    },
+    {
+      "Domain": "newdefend.cn",
+      "Name": "牛盾云安全",
+      "Description": "https://www.newdefend.com"
+    },
+    {
+      "Domain": "ffdns.net",
+      "Name": "CloudXNS",
+      "Description": "https://www.cloudxns.net"
+    },
+    {
+      "Domain": "aocdn.com",
+      "Name": "可靠云 CDN (贴图库)",
+      "Description": "http://www.kekaoyun.com/"
+    },
+    {
+      "Domain": "bsgslb.cn",
+      "Name": "白山云 CDN",
+      "Description": "https://zh.baishancloud.com/"
+    },
+    {
+      "Domain": "qingcdn.com",
+      "Name": "白山云 CDN",
+      "Description": "https://zh.baishancloud.com/"
+    },
+    {
+      "Domain": "bsclink.cn",
+      "Name": "白山云 CDN",
+      "Description": "https://zh.baishancloud.com/"
+    },
+    {
+      "Domain": "trpcdn.net",
+      "Name": "白山云 CDN",
+      "Description": "https://zh.baishancloud.com/"
+    },
+    {
+      "Domain": "anquan.io",
+      "Name": "牛盾云安全",
+      "Description": "https://www.newdefend.com"
+    },
+    {
+      "Domain": "cloudglb.com",
+      "Name": "快网 CDN",
+      "Description": "http://www.fastweb.com.cn/"
+    },
+    {
+      "Domain": "fastweb.com",
+      "Name": "快网 CDN",
+      "Description": "http://www.fastweb.com.cn/"
+    },
+    {
+      "Domain": "fastwebcdn.com",
+      "Name": "快网 CDN",
+      "Description": "http://www.fastweb.com.cn/"
+    },
+    {
+      "Domain": "cloudcdn.net",
+      "Name": "快网 CDN",
+      "Description": "http://www.fastweb.com.cn/"
+    },
+    {
+      "Domain": "fwcdn.com",
+      "Name": "快网 CDN",
+      "Description": "http://www.fastweb.com.cn/"
+    },
+    {
+      "Domain": "fwdns.net",
+      "Name": "快网 CDN",
+      "Description": "http://www.fastweb.com.cn/"
+    },
+    {
+      "Domain": "hadns.net",
+      "Name": "快网 CDN",
+      "Description": "http://www.fastweb.com.cn/"
+    },
+    {
+      "Domain": "hacdn.net",
+      "Name": "快网 CDN",
+      "Description": "http://www.fastweb.com.cn/"
+    },
+    {
+      "Domain": "cachecn.com",
+      "Name": "快网 CDN",
+      "Description": "http://www.fastweb.com.cn/"
+    },
+    {
+      "Domain": "qingcache.com",
+      "Name": "青云 CDN",
+      "Description": "https://www.qingcloud.com/products/cdn/"
+    },
+    {
+      "Domain": "qingcloud.com",
+      "Name": "青云 CDN",
+      "Description": "https://www.qingcloud.com/products/cdn/"
+    },
+    {
+      "Domain": "frontwize.com",
+      "Name": "青云 CDN",
+      "Description": "https://www.qingcloud.com/products/cdn/"
+    },
+    {
+      "Domain": "msscdn.com",
+      "Name": "美团云 CDN",
+      "Description": "https://www.mtyun.com/product/cdn"
+    },
+    {
+      "Domain": "800cdn.com",
+      "Name": "西部数码",
+      "Description": "https://www.west.cn"
+    },
+    {
+      "Domain": "tbcache.com",
+      "Name": "阿里云 CDN",
+      "Description": "https://www.aliyun.com/product/cdn"
+    },
+    {
+      "Domain": "aliyun-inc.com",
+      "Name": "阿里云 CDN",
+      "Description": "https://www.aliyun.com/product/cdn"
+    },
+    {
+      "Domain": "aliyuncs.com",
+      "Name": "阿里云 CDN",
+      "Description": "https://www.aliyun.com/product/cdn"
+    },
+    {
+      "Domain": "alikunlun.net",
+      "Name": "阿里云 CDN",
+      "Description": "https://www.aliyun.com/product/cdn"
+    },
+    {
+      "Domain": "alikunlun.com",
+      "Name": "阿里云 CDN",
+      "Description": "https://www.aliyun.com/product/cdn"
+    },
+    {
+      "Domain": "alicdn.com",
+      "Name": "阿里云 CDN",
+      "Description": "https://www.aliyun.com/product/cdn"
+    },
+    {
+      "Domain": "aligaofang.com",
+      "Name": "阿里云盾高防",
+      "Description": "https://www.aliyun.com/product/ddos"
+    },
+    {
+      "Domain": "yundunddos.com",
+      "Name": "阿里云盾高防",
+      "Description": "https://www.aliyun.com/product/ddos"
+    },
+    {
+      "Domain": "kunlun(.*).com",
+      "Name": "阿里云 CDN",
+      "Description": "https://www.aliyun.com/product/cdn"
+    },
+    {
+      "Domain": "cdngslb.com",
+      "Name": "阿里云 CDN",
+      "Description": "https://www.aliyun.com/product/cdn"
+    },
+    {
+      "Domain": "yunjiasu-cdn.net",
+      "Name": "百度云加速",
+      "Description": "https://su.baidu.com"
+    },
+    {
+      "Domain": "momentcdn.com",
+      "Name": "魔门云 CDN",
+      "Description": "https://www.cachemoment.com"
+    },
+    {
+      "Domain": "aicdn.com",
+      "Name": "又拍云",
+      "Description": "https://www.upyun.com"
+    },
+    {
+      "Domain": "qbox.me",
+      "Name": "七牛云",
+      "Description": "https://www.qiniu.com"
+    },
+    {
+      "Domain": "qiniu.com",
+      "Name": "七牛云",
+      "Description": "https://www.qiniu.com"
+    },
+    {
+      "Domain": "qiniudns.com",
+      "Name": "七牛云",
+      "Description": "https://www.qiniu.com"
+    },
+    {
+      "Domain": "jcloudcs.com",
+      "Name": "京东云 CDN",
+      "Description": "https://www.jdcloud.com/cn/products/cdn"
+    },
+    {
+      "Domain": "jdcdn.com",
+      "Name": "京东云 CDN",
+      "Description": "https://www.jdcloud.com/cn/products/cdn"
+    },
+    {
+      "Domain": "qianxun.com",
+      "Name": "京东云 CDN",
+      "Description": "https://www.jdcloud.com/cn/products/cdn"
+    },
+    {
+      "Domain": "jcloudlb.com",
+      "Name": "京东云 CDN",
+      "Description": "https://www.jdcloud.com/cn/products/cdn"
+    },
+    {
+      "Domain": "jcloud-cdn.com",
+      "Name": "京东云 CDN",
+      "Description": "https://www.jdcloud.com/cn/products/cdn"
+    },
+    {
+      "Domain": "maoyun.tv",
+      "Name": "猫云融合 CDN",
+      "Description": "https://www.maoyun.com/"
+    },
+    {
+      "Domain": "maoyundns.com",
+      "Name": "猫云融合 CDN",
+      "Description": "https://www.maoyun.com/"
+    },
+    {
+      "Domain": "xgslb.net",
+      "Name": "WebLuker (蓝汛)",
+      "Description": "http://www.webluker.com"
+    },
+    {
+      "Domain": "ucloud.cn",
+      "Name": "UCloud CDN",
+      "Description": "https://www.ucloud.cn/site/product/ucdn.html"
+    },
+    {
+      "Domain": "ucloud.com.cn",
+      "Name": "UCloud CDN",
+      "Description": "https://www.ucloud.cn/site/product/ucdn.html"
+    },
+    {
+      "Domain": "cdndo.com",
+      "Name": "UCloud CDN",
+      "Description": "https://www.ucloud.cn/site/product/ucdn.html"
+    },
+    {
+      "Domain": "zenlogic.net",
+      "Name": "Zenlayer CDN",
+      "Description": "https://www.zenlayer.com"
+    },
+    {
+      "Domain": "ogslb.com",
+      "Name": "Zenlayer CDN",
+      "Description": "https://www.zenlayer.com"
+    },
+    {
+      "Domain": "uxengine.net",
+      "Name": "Zenlayer CDN",
+      "Description": "https://www.zenlayer.com"
+    },
+    {
+      "Domain": "tan14.net",
+      "Name": "TAN14 CDN",
+      "Description": "http://www.tan14.cn/"
+    },
+    {
+      "Domain": "verycloud.cn",
+      "Name": "VeryCloud 云分发",
+      "Description": "https://www.verycloud.cn/"
+    },
+    {
+      "Domain": "verycdn.net",
+      "Name": "VeryCloud 云分发",
+      "Description": "https://www.verycloud.cn/"
+    },
+    {
+      "Domain": "verygslb.com",
+      "Name": "VeryCloud 云分发",
+      "Description": "https://www.verycloud.cn/"
+    },
+    {
+      "Domain": "xundayun.cn",
+      "Name": "SpeedyCloud CDN",
+      "Description": "https://www.speedycloud.cn/zh/Products/CDN/CloudDistribution.html"
+    },
+    {
+      "Domain": "xundayun.com",
+      "Name": "SpeedyCloud CDN",
+      "Description": "https://www.speedycloud.cn/zh/Products/CDN/CloudDistribution.html"
+    },
+    {
+      "Domain": "speedycloud.cc",
+      "Name": "SpeedyCloud CDN",
+      "Description": "https://www.speedycloud.cn/zh/Products/CDN/CloudDistribution.html"
+    },
+    {
+      "Domain": "mucdn.net",
+      "Name": "Verizon CDN (Edgecast)",
+      "Description": "https://www.verizondigitalmedia.com/platform/edgecast-cdn/"
+    },
+    {
+      "Domain": "nucdn.net",
+      "Name": "Verizon CDN (Edgecast)",
+      "Description": "https://www.verizondigitalmedia.com/platform/edgecast-cdn/"
+    },
+    {
+      "Domain": "alphacdn.net",
+      "Name": "Verizon CDN (Edgecast)",
+      "Description": "https://www.verizondigitalmedia.com/platform/edgecast-cdn/"
+    },
+    {
+      "Domain": "systemcdn.net",
+      "Name": "Verizon CDN (Edgecast)",
+      "Description": "https://www.verizondigitalmedia.com/platform/edgecast-cdn/"
+    },
+    {
+      "Domain": "edgecastcdn.net",
+      "Name": "Verizon CDN (Edgecast)",
+      "Description": "https://www.verizondigitalmedia.com/platform/edgecast-cdn/"
+    },
+    {
+      "Domain": "zetacdn.net",
+      "Name": "Verizon CDN (Edgecast)",
+      "Description": "https://www.verizondigitalmedia.com/platform/edgecast-cdn/"
+    },
+    {
+      "Domain": "coding.io",
+      "Name": "Coding Pages",
+      "Description": "https://coding.net/pages"
+    },
+    {
+      "Domain": "coding.me",
+      "Name": "Coding Pages",
+      "Description": "https://coding.net/pages"
+    },
+    {
+      "Domain": "gitlab.io",
+      "Name": "GitLab Pages",
+      "Description": "https://docs.gitlab.com/ee/user/project/pages/"
+    },
+    {
+      "Domain": "github.io",
+      "Name": "GitHub Pages",
+      "Description": "https://pages.github.com/"
+    },
+    {
+      "Domain": "herokuapp.com",
+      "Name": "Heroku SaaS",
+      "Description": "https://www.heroku.com"
+    },
+    {
+      "Domain": "googleapis.com",
+      "Name": "Google Cloud Storage",
+      "Description": "https://cloud.google.com/storage/"
+    },
+    {
+      "Domain": "netdna.com",
+      "Name": "Stackpath (原 MaxCDN)",
+      "Description": "https://www.stackpath.com/maxcdn/"
+    },
+    {
+      "Domain": "netdna-cdn.com",
+      "Name": "Stackpath (原 MaxCDN)",
+      "Description": "https://www.stackpath.com/maxcdn/"
+    },
+    {
+      "Domain": "netdna-ssl.com",
+      "Name": "Stackpath (原 MaxCDN)",
+      "Description": "https://www.stackpath.com/maxcdn/"
+    },
+    {
+      "Domain": "cdntip.com",
+      "Name": "腾讯云 CDN",
+      "Description": "https://cloud.tencent.com/product/cdn-scd"
+    },
+    {
+      "Domain": "dnsv1.com",
+      "Name": "腾讯云 CDN",
+      "Description": "https://cloud.tencent.com/product/cdn-scd"
+    },
+    {
+      "Domain": "tencdns.net",
+      "Name": "腾讯云 CDN",
+      "Description": "https://cloud.tencent.com/product/cdn-scd"
+    },
+    {
+      "Domain": "dayugslb.com",
+      "Name": "腾讯云大禹 BGP 高防",
+      "Description": "https://cloud.tencent.com/product/ddos-advanced"
+    },
+    {
+      "Domain": "tcdnvod.com",
+      "Name": "腾讯云视频 CDN",
+      "Description": "https://lab.skk.moe/cdn"
+    },
+    {
+      "Domain": "tdnsv5.com",
+      "Name": "腾讯云 CDN",
+      "Description": "https://cloud.tencent.com/product/cdn-scd"
+    },
+    {
+      "Domain": "ksyuncdn.com",
+      "Name": "金山云 CDN",
+      "Description": "https://www.ksyun.com/post/product/CDN"
+    },
+    {
+      "Domain": "ks-cdn.com",
+      "Name": "金山云 CDN",
+      "Description": "https://www.ksyun.com/post/product/CDN"
+    },
+    {
+      "Domain": "ksyuncdn-k1.com",
+      "Name": "金山云 CDN",
+      "Description": "https://www.ksyun.com/post/product/CDN"
+    },
+    {
+      "Domain": "netlify.com",
+      "Name": "Netlify",
+      "Description": "https://www.netlify.com"
+    },
+    {
+      "Domain": "zeit.co",
+      "Name": "ZEIT Now Smart CDN",
+      "Description": "https://zeit.co"
+    },
+    {
+      "Domain": "zeit-cdn.net",
+      "Name": "ZEIT Now Smart CDN",
+      "Description": "https://zeit.co"
+    },
+    {
+      "Domain": "b-cdn.net",
+      "Name": "Bunny CDN",
+      "Description": "https://bunnycdn.com/"
+    },
+    {
+      "Domain": "lsycdn.com",
+      "Name": "蓝视云 CDN",
+      "Description": "https://cloud.lsy.cn/"
+    },
+    {
+      "Domain": "scsdns.com",
+      "Name": "逸云科技云加速 CDN",
+      "Description": "http://www.exclouds.com/navPage/wise"
+    },
+    {
+      "Domain": "quic.cloud",
+      "Name": "QUIC.Cloud",
+      "Description": "https://quic.cloud/"
+    },
+    {
+      "Domain": "flexbalancer.net",
+      "Name": "FlexBalancer - Smart Traffic Routing",
+      "Description": "https://perfops.net/flexbalancer"
+    },
+    {
+      "Domain": "gcdn.co",
+      "Name": "G - Core Labs",
+      "Description": "https://gcorelabs.com/cdn/"
+    },
+    {
+      "Domain": "sangfordns.com",
+      "Name": "深信服 AD 系列应用交付产品  单边加速解决方案",
+      "Description": "http://www.sangfor.com.cn/topic/2011adn/solutions5.html"
+    },
+    {
+      "Domain": "stspg-customer.com",
+      "Name": "StatusPage.io",
+      "Description": "https://www.statuspage.io"
+    },
+    {
+      "Domain": "turbobytes.net",
+      "Name": "TurboBytes Multi-CDN",
+      "Description": "https://www.turbobytes.com"
+    },
+    {
+      "Domain": "turbobytes-cdn.com",
+      "Name": "TurboBytes Multi-CDN",
+      "Description": "https://www.turbobytes.com"
+    },
+    {
+      "Domain": "att-dsa.net",
+      "Name": "AT\u0026T Content Delivery Network",
+      "Description": "https://www.business.att.com/products/cdn.html"
+    },
+    {
+      "Domain": "azioncdn.net",
+      "Name": "Azion Tech | Edge Computing PLatform",
+      "Description": "https://www.azion.com"
+    },
+    {
+      "Domain": "belugacdn.com",
+      "Name": "BelugaCDN",
+      "Description": "https://www.belugacdn.com"
+    },
+    {
+      "Domain": "cachefly.net",
+      "Name": "CacheFly CDN",
+      "Description": "https://www.cachefly.com/"
+    },
+    {
+      "Domain": "inscname.net",
+      "Name": "Instart CDN",
+      "Description": "https://www.instart.com/products/web-performance/cdn"
+    },
+    {
+      "Domain": "insnw.net",
+      "Name": "Instart CDN",
+      "Description": "https://www.instart.com/products/web-performance/cdn"
+    },
+    {
+      "Domain": "internapcdn.net",
+      "Name": "Internap CDN",
+      "Description": "https://www.inap.com/network/content-delivery-network"
+    },
+    {
+      "Domain": "footprint.net",
+      "Name": "CenturyLink CDN (原 Level 3)",
+      "Description": "https://www.centurylink.com/business/networking/cdn.html"
+    },
+    {
+      "Domain": "llnwi.net",
+      "Name": "Limelight Network",
+      "Description": "https://www.limelight.com"
+    },
+    {
+      "Domain": "llnwd.net",
+      "Name": "Limelight Network",
+      "Description": "https://www.limelight.com"
+    },
+    {
+      "Domain": "unud.net",
+      "Name": "Limelight Network",
+      "Description": "https://www.limelight.com"
+    },
+    {
+      "Domain": "lldns.net",
+      "Name": "Limelight Network",
+      "Description": "https://www.limelight.com"
+    },
+    {
+      "Domain": "stackpathdns.com",
+      "Name": "Stackpath CDN",
+      "Description": "https://www.stackpath.com"
+    },
+    {
+      "Domain": "stackpathcdn.com",
+      "Name": "Stackpath CDN",
+      "Description": "https://www.stackpath.com"
+    },
+    {
+      "Domain": "mncdn.com",
+      "Name": "Medianova",
+      "Description": "https://www.medianova.com"
+    },
+    {
+      "Domain": "rncdn1.com",
+      "Name": "Relected Networks",
+      "Description": "https://reflected.net/globalcdn"
+    },
+    {
+      "Domain": "simplecdn.net",
+      "Name": "Relected Networks",
+      "Description": "https://reflected.net/globalcdn"
+    },
+    {
+      "Domain": "swiftserve.com",
+      "Name": "Conversant - SwiftServe CDN",
+      "Description": "https://reflected.net/globalcdn"
+    },
+    {
+      "Domain": "bitgravity.com",
+      "Name": "Tata communications CDN",
+      "Description": "https://cdn.tatacommunications.com"
+    },
+    {
+      "Domain": "zenedge.net",
+      "Name": "Oracle Dyn Web Application Security suite (原 Zenedge CDN)",
+      "Description": "https://cdn.tatacommunications.com"
+    },
+    {
+      "Domain": "biliapi.com",
+      "Name": "Bilibili 业务 GSLB",
+      "Description": "https://lab.skk.moe/cdn"
+    },
+    {
+      "Domain": "hdslb.net",
+      "Name": "Bilibili 高可用负载均衡",
+      "Description": "https://github.com/bilibili/overlord"
+    },
+    {
+      "Domain": "hdslb.com",
+      "Name": "Bilibili 高可用地域负载均衡",
+      "Description": "https://github.com/bilibili/overlord"
+    },
+    {
+      "Domain": "xwaf.cn",
+      "Name": "极御云安全（浙江壹云云计算有限公司）",
+      "Description": "https://www.stopddos.cn"
+    },
+    {
+      "Domain": "shifen.com",
+      "Name": "百度旗下业务地域负载均衡系统",
+      "Description": "https://lab.skk.moe/cdn"
+    },
+    {
+      "Domain": "sinajs.cn",
+      "Name": "新浪静态域名",
+      "Description": "https://lab.skk.moe/cdn"
+    },
+    {
+      "Domain": "tencent-cloud.net",
+      "Name": "腾讯旗下业务地域负载均衡系统",
+      "Description": "https://lab.skk.moe/cdn"
+    },
+    {
+      "Domain": "elemecdn.com",
+      "Name": "饿了么静态域名与地域负载均衡",
+      "Description": "https://lab.skk.moe/cdn"
+    },
+    {
+      "Domain": "sinaedge.com",
+      "Name": "新浪科技融合CDN负载均衡",
+      "Description": "https://lab.skk.moe/cdn"
+    },
+    {
+      "Domain": "sina.com.cn",
+      "Name": "新浪科技融合CDN负载均衡",
+      "Description": "https://lab.skk.moe/cdn"
+    },
+    {
+      "Domain": "sinacdn.com",
+      "Name": "新浪云 CDN",
+      "Description": "https://www.sinacloud.com/doc/sae/php/cdn.html"
+    },
+    {
+      "Domain": "sinasws.com",
+      "Name": "新浪云 CDN",
+      "Description": "https://www.sinacloud.com/doc/sae/php/cdn.html"
+    },
+    {
+      "Domain": "saebbs.com",
+      "Name": "新浪云 SAE 云引擎",
+      "Description": "https://www.sinacloud.com/doc/sae/php/cdn.html"
+    },
+    {
+      "Domain": "websitecname.cn",
+      "Name": "美橙互联旗下建站之星",
+      "Description": "https://www.sitestar.cn"
+    },
+    {
+      "Domain": "cdncenter.cn",
+      "Name": "美橙互联CDN",
+      "Description": "https://www.cndns.com"
+    },
+    {
+      "Domain": "vhostgo.com",
+      "Name": "西部数码虚拟主机",
+      "Description": "https://www.west.cn"
+    },
+    {
+      "Domain": "jsd.cc",
+      "Name": "上海云盾YUNDUN",
+      "Description": "https://www.yundun.com"
+    },
+    {
+      "Domain": "powercdn.cn",
+      "Name": "动力在线CDN",
+      "Description": "http://www.powercdn.com"
+    },
+    {
+      "Domain": "21vokglb.cn",
+      "Name": "世纪互联云快线业务",
+      "Description": "https://www.21vianet.com"
+    },
+    {
+      "Domain": "21vianet.com.cn",
+      "Name": "世纪互联云快线业务",
+      "Description": "https://www.21vianet.com"
+    },
+    {
+      "Domain": "21okglb.cn",
+      "Name": "世纪互联云快线业务",
+      "Description": "https://www.21vianet.com"
+    },
+    {
+      "Domain": "21speedcdn.com",
+      "Name": "世纪互联云快线业务",
+      "Description": "https://www.21vianet.com"
+    },
+    {
+      "Domain": "21cvcdn.com",
+      "Name": "世纪互联云快线业务",
+      "Description": "https://www.21vianet.com"
+    },
+    {
+      "Domain": "okcdn.com",
+      "Name": "世纪互联云快线业务",
+      "Description": "https://www.21vianet.com"
+    },
+    {
+      "Domain": "okglb.com",
+      "Name": "世纪互联云快线业务",
+      "Description": "https://www.21vianet.com"
+    },
+    {
+      "Domain": "cdnetworks.net",
+      "Name": "北京同兴万点网络技术",
+      "Description": "http://www.txnetworks.cn/"
+    },
+    {
+      "Domain": "txnetworks.cn",
+      "Name": "北京同兴万点网络技术",
+      "Description": "http://www.txnetworks.cn/"
+    },
+    {
+      "Domain": "cdnnetworks.com",
+      "Name": "北京同兴万点网络技术",
+      "Description": "http://www.txnetworks.cn/"
+    },
+    {
+      "Domain": "txcdn.cn",
+      "Name": "北京同兴万点网络技术",
+      "Description": "http://www.txnetworks.cn/"
+    },
+    {
+      "Domain": "cdnunion.net",
+      "Name": "宝腾互联旗下上海万根网络（CDN 联盟）",
+      "Description": "http://www.cdnunion.com"
+    },
+    {
+      "Domain": "cdnunion.com",
+      "Name": "宝腾互联旗下上海万根网络（CDN 联盟）",
+      "Description": "http://www.cdnunion.com"
+    },
+    {
+      "Domain": "mygslb.com",
+      "Name": "宝腾互联旗下上海万根网络（YaoCDN）",
+      "Description": "http://www.vangen.cn"
+    },
+    {
+      "Domain": "cdnudns.com",
+      "Name": "宝腾互联旗下上海万根网络（YaoCDN）",
+      "Description": "http://www.vangen.cn"
+    },
+    {
+      "Domain": "sprycdn.com",
+      "Name": "宝腾互联旗下上海万根网络（YaoCDN）",
+      "Description": "http://www.vangen.cn"
+    },
+    {
+      "Domain": "chuangcdn.com",
+      "Name": "创世云融合 CDN",
+      "Description": "https://www.chuangcache.com/index.html"
+    },
+    {
+      "Domain": "aocde.com",
+      "Name": "创世云融合 CDN",
+      "Description": "https://www.chuangcache.com"
+    },
+    {
+      "Domain": "ctxcdn.cn",
+      "Name": "中国电信天翼云CDN",
+      "Description": "https://www.ctyun.cn/product2/#/product/10027560"
+    },
+    {
+      "Domain": "yfcdn.net",
+      "Name": "云帆加速CDN",
+      "Description": "https://www.yfcloud.com"
+    },
+    {
+      "Domain": "mmycdn.cn",
+      "Name": "蛮蛮云 CDN（中联利信）",
+      "Description": "https://www.chinamaincloud.com/cloudDispatch.html"
+    },
+    {
+      "Domain": "chinamaincloud.com",
+      "Name": "蛮蛮云 CDN（中联利信）",
+      "Description": "https://www.chinamaincloud.com/cloudDispatch.html"
+    },
+    {
+      "Domain": "cnispgroup.com",
+      "Name": "中联数据（中联利信）",
+      "Description": "http://www.cnispgroup.com/"
+    },
+    {
+      "Domain": "cdnle.com",
+      "Name": "新乐视云联（原乐视云）CDN",
+      "Description": "http://www.lecloud.com/zh-cn"
+    },
+    {
+      "Domain": "gosuncdn.com",
+      "Name": "高升控股CDN技术",
+      "Description": "http://www.gosun.com"
+    },
+    {
+      "Domain": "mmtrixopt.com",
+      "Name": "mmTrix性能魔方（高升控股旗下）",
+      "Description": "http://www.mmtrix.com"
+    },
+    {
+      "Domain": "cloudfence.cn",
+      "Name": "蓝盾云CDN",
+      "Description": "https://www.cloudfence.cn/#/cloudWeb/yaq/yaqyfx"
+    },
+    {
+      "Domain": "ngaagslb.cn",
+      "Name": "新流云（新流万联）",
+      "Description": "https://www.ngaa.com.cn"
+    },
+    {
+      "Domain": "p2cdn.com",
+      "Name": "星域云P2P CDN",
+      "Description": "https://www.xycloud.com"
+    },
+    {
+      "Domain": "00cdn.com",
+      "Name": "星域云P2P CDN",
+      "Description": "https://www.xycloud.com"
+    },
+    {
+      "Domain": "sankuai.com",
+      "Name": "美团云（三快科技）负载均衡",
+      "Description": "https://www.mtyun.com"
+    },
+    {
+      "Domain": "lccdn.org",
+      "Name": "领智云 CDN（杭州领智云画）",
+      "Description": "http://www.linkingcloud.com"
+    },
+    {
+      "Domain": "nscloudwaf.com",
+      "Name": "绿盟云 WAF",
+      "Description": "https://cloud.nsfocus.com"
+    },
+    {
+      "Domain": "2cname.com",
+      "Name": "网堤安全",
+      "Description": "https://www.ddos.com"
+    },
+    {
+      "Domain": "ucloudgda.com",
+      "Name": "UCloud 罗马 Rome 全球网络加速",
+      "Description": "https://www.ucloud.cn/site/product/rome.html"
+    },
+    {
+      "Domain": "google.com",
+      "Name": "Google Web 业务",
+      "Description": "https://lab.skk.moe/cdn"
+    },
+    {
+      "Domain": "1e100.net",
+      "Name": "Google Web 业务",
+      "Description": "https://lab.skk.moe/cdn"
+    },
+    {
+      "Domain": "ncname.com",
+      "Name": "NodeCache",
+      "Description": "https://www.nodecache.com"
+    },
+    {
+      "Domain": "alipaydns.com",
+      "Name": "蚂蚁金服旗下业务地域负载均衡系统",
+      "Description": "https://lab.skk.moe/cdn/"
+    },
+    {
+      "Domain": "wscloudcdn.com",
+      "Name": "全速云（网宿）CloudEdge 云加速",
+      "Description": "https://www.quansucloud.com/product.action?product.id=270"
+    }
+  ]
+}

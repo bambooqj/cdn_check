@@ -1,0 +1,18 @@
+{
+  "version": "2023.12",
+  "update_log": [
+    {
+      "date": "2023-12-15",
+      "changes": [
+        "初始版本",
+        "添加8个主流CDN提供商规则",
+        "包括Cloudflare、Akamai、Fastly、Amazon CloudFront、Microsoft Azure CDN、Google Cloud CDN、Alibaba Cloud CDN和Tencent Cloud CDN"
+      ],
+      "source": "manual"
+    }
+  ],
+  "validation": {
+    "test_cases": 150,
+    "accuracy": 0.93
+  }
+} 
