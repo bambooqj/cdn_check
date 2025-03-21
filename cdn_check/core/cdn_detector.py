@@ -451,13 +451,12 @@ class CDNDetector:
                     provider = indicator.get('provider')
                     header = indicator.get('header')
                     value = indicator.get('value')
-                    match_type = indicator.get('match_type')
                     
                     if provider and provider != '可能是CDN':
                         # 如果有明确的提供商，直接增加得分
                         if provider not in scores:
                             scores[provider] = 0.0
-                        
+
                         scores[provider] += 0.3
                         
                         if provider not in indicators:
@@ -523,7 +522,7 @@ class CDNDetector:
             
             if provider_indicators:
                 indicators[provider] = provider_indicators
-        
+
         # 选择得分最高的提供商
         if scores:
             max_score = max(scores.values())
@@ -535,14 +534,15 @@ class CDNDetector:
             logger.info(f"最高得分提供商: {max_providers}")
             
             if max_score >= 0.3:  # 置信度阈值
-                provider = max_providers[0]
+                provider = max_providers
+                if max_score == 0.3:
+                    provider = 'Unkonw CDN'
                 return {
                     'is_cdn': True,
                     'cdn_provider': provider,
                     'confidence': max_score,
-                    'indicators': indicators.get(provider, [])
+                    'indicators': indicators.get(provider[0], [])
                 }
-        
         # 如果没有匹配到具体CDN提供商，但检测到通用CDN特征
         if generic_cdn_indicators:
             logger.info("未匹配到具体CDN提供商，但检测到通用CDN特征")
@@ -552,6 +552,7 @@ class CDNDetector:
                 'confidence': 0.3,  # 基于通用特征的置信度
                 'indicators': generic_cdn_indicators
             }
+
         
         logger.info("未检测到CDN")
         return {

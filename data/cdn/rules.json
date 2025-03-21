@@ -1,58 +1,351 @@
 [
   {
     "name": "Cloudflare",
-    "cname_patterns": ["*.cloudflare.com", "*.cloudflare.net", "*.cdn.cloudflare.net"],
-    "ip_ranges": ["103.21.244.0/22", "103.22.200.0/22", "103.31.4.0/22", "104.16.0.0/12", "108.162.192.0/18", "131.0.72.0/22", "141.101.64.0/18", "162.158.0.0/15", "172.64.0.0/13", "173.245.48.0/20", "188.114.96.0/20", "190.93.240.0/20", "197.234.240.0/22", "198.41.128.0/17"],
-    "http_headers": ["cf-ray", "cf-cache-status", "cf-request-id", "cf-connecting-ip"],
-    "cert_issuers": ["Cloudflare", "CloudFlare"]
+    "cname_patterns": [
+      "*.cloudflare.com",
+      "*.cloudflare.net",
+      "*.cdn.cloudflare.net"
+    ],
+    "ip_ranges": [
+      "103.21.244.0/22",
+      "103.22.200.0/22",
+      "103.31.4.0/22",
+      "104.16.0.0/12",
+      "108.162.192.0/18",
+      "131.0.72.0/22",
+      "141.101.64.0/18",
+      "162.158.0.0/15",
+      "172.64.0.0/13",
+      "173.245.48.0/20",
+      "188.114.96.0/20",
+      "190.93.240.0/20",
+      "197.234.240.0/22",
+      "198.41.128.0/17"
+    ],
+    "http_headers": [
+      "cf-ray",
+      "cf-cache-status",
+      "cf-request-id",
+      "cf-connecting-ip"
+    ],
+    "server_patterns": [
+      "cloudflare"
+    ],
+    "cert_keywords": [
+      "CloudFlare"
+    ]
   },
   {
     "name": "Akamai",
-    "cname_patterns": ["*.akamai.net", "*.akamaiedge.net", "*.akamaized.net", "*.akamaihd.net"],
-    "ip_ranges": ["23.32.0.0/11", "104.64.0.0/10", "184.24.0.0/13", "184.50.0.0/15", "184.84.0.0/14", "2.16.0.0/13", "95.100.0.0/15", "96.16.0.0/15", "96.6.0.0/15"],
-    "http_headers": ["x-akamai-transformed", "akamai-origin-hop", "x-akamai-request-id"],
-    "cert_issuers": ["Akamai"]
+    "cname_patterns": [
+      "*.akamai.net",
+      "*.akamaiedge.net",
+      "*.akamaized.net",
+      "*.akamaihd.net"
+    ],
+    "ip_ranges": [
+      "23.32.0.0/11",
+      "104.64.0.0/10",
+      "184.24.0.0/13",
+      "184.50.0.0/15",
+      "184.84.0.0/14",
+      "2.16.0.0/13",
+      "95.100.0.0/15",
+      "96.16.0.0/15",
+      "96.6.0.0/15"
+    ],
+    "http_headers": [
+      "x-akamai-transformed",
+      "akamai-origin-hop",
+      "x-akamai-request-id"
+    ],
+    "cert_keywords": [
+      "Akamai"
+    ]
   },
   {
     "name": "Fastly",
-    "cname_patterns": ["*.fastly.net", "*.global.fastly.net"],
-    "ip_ranges": ["23.235.32.0/20", "43.249.72.0/22", "103.244.50.0/24", "103.245.222.0/23", "103.245.224.0/24", "104.156.80.0/20", "146.75.0.0/16", "151.101.0.0/16", "157.52.64.0/18", "167.82.0.0/17", "167.82.128.0/20", "167.82.160.0/20", "167.82.224.0/20", "172.111.64.0/18", "185.31.16.0/22", "199.27.72.0/21", "199.232.0.0/16"],
-    "http_headers": ["x-served-by", "x-cache-hits", "x-timer", "x-fastly-request-id"],
-    "cert_issuers": ["Fastly"]
+    "cname_patterns": [
+      "*.fastly.net",
+      "*.global.fastly.net"
+    ],
+    "ip_ranges": [
+      "23.235.32.0/20",
+      "43.249.72.0/22",
+      "103.244.50.0/24",
+      "103.245.222.0/23",
+      "103.245.224.0/24",
+      "104.156.80.0/20",
+      "146.75.0.0/16",
+      "151.101.0.0/16",
+      "157.52.64.0/18",
+      "167.82.0.0/17",
+      "167.82.128.0/20",
+      "167.82.160.0/20",
+      "167.82.224.0/20",
+      "172.111.64.0/18",
+      "185.31.16.0/22",
+      "199.27.72.0/21",
+      "199.232.0.0/16"
+    ],
+    "http_headers": [
+      "x-served-by",
+      "x-cache-hits",
+      "x-timer",
+      "x-fastly-request-id"
+    ],
+    "cert_keywords": [
+      "Fastly"
+    ]
   },
   {
     "name": "Amazon CloudFront",
-    "cname_patterns": ["*.cloudfront.net"],
-    "ip_ranges": ["54.182.0.0/16", "54.192.0.0/16", "54.230.0.0/16", "54.239.128.0/18", "54.239.192.0/19", "99.84.0.0/16", "204.246.164.0/22", "204.246.168.0/22", "204.246.174.0/23", "204.246.176.0/20", "205.251.192.0/19", "205.251.249.0/24", "205.251.250.0/23", "205.251.252.0/23", "205.251.254.0/24", "216.137.32.0/19"],
-    "http_headers": ["x-amz-cf-id", "x-amz-cf-pop", "x-cache"],
-    "cert_issuers": ["Amazon", "CloudFront"]
+    "cname_patterns": [
+      "*.cloudfront.net"
+    ],
+    "ip_ranges": [
+      "54.182.0.0/16",
+      "54.192.0.0/16",
+      "54.230.0.0/16",
+      "54.239.128.0/18",
+      "54.239.192.0/19",
+      "99.84.0.0/16",
+      "204.246.164.0/22",
+      "204.246.168.0/22",
+      "204.246.174.0/23",
+      "204.246.176.0/20",
+      "205.251.192.0/19",
+      "205.251.249.0/24",
+      "205.251.250.0/23",
+      "205.251.252.0/23",
+      "205.251.254.0/24",
+      "216.137.32.0/19"
+    ],
+    "http_headers": [
+      "x-amz-cf-id",
+      "x-amz-cf-pop",
+      "x-cache"
+    ],
+    "cert_keywords": [
+      "Amazon",
+      "CloudFront"
+    ]
   },
   {
     "name": "Microsoft Azure CDN",
-    "cname_patterns": ["*.azureedge.net", "*.msecnd.net", "*.vo.msecnd.net"],
-    "ip_ranges": ["13.32.0.0/15", "13.54.0.0/15", "13.59.0.0/16", "13.107.246.0/24", "13.107.246.0/24", "152.199.104.0/21", "152.199.104.0/21", "204.79.197.0/24"],
-    "http_headers": ["x-msedge-ref", "x-azure-ref"],
-    "cert_issuers": ["Microsoft", "Microsoft Corporation"]
+    "cname_patterns": [
+      "*.azureedge.net",
+      "*.msecnd.net",
+      "*.vo.msecnd.net"
+    ],
+    "ip_ranges": [
+      "13.32.0.0/15",
+      "13.54.0.0/15",
+      "13.59.0.0/16",
+      "13.107.246.0/24",
+      "13.107.246.0/24",
+      "152.199.104.0/21",
+      "152.199.104.0/21",
+      "204.79.197.0/24"
+    ],
+    "http_headers": [
+      "x-msedge-ref",
+      "x-azure-ref"
+    ],
+    "cert_keywords": [
+      "Microsoft",
+      "Microsoft Corporation"
+    ]
   },
   {
     "name": "Google Cloud CDN",
-    "cname_patterns": ["*.googleusercontent.com", "*.gstatic.com", "*.googlesyndication.com", "*.googlehosted.com"],
-    "ip_ranges": ["35.190.0.0/17", "35.191.0.0/16", "130.211.0.0/16", "216.58.192.0/19", "216.239.32.0/19", "172.217.0.0/16", "172.253.0.0/16", "74.125.0.0/16", "108.177.0.0/17"],
-    "http_headers": ["via", "x-goog-", "x-goog-cache", "x-goog-generation"],
-    "cert_issuers": ["Google", "Google Trust Services"]
+    "cname_patterns": [
+      "*.googleusercontent.com",
+      "*.gstatic.com",
+      "*.googlesyndication.com",
+      "*.googlehosted.com"
+    ],
+    "ip_ranges": [
+      "35.190.0.0/17",
+      "35.191.0.0/16",
+      "130.211.0.0/16",
+      "216.58.192.0/19",
+      "216.239.32.0/19",
+      "172.217.0.0/16",
+      "172.253.0.0/16",
+      "74.125.0.0/16",
+      "108.177.0.0/17"
+    ],
+    "http_headers": [
+      "via",
+      "x-goog-",
+      "x-goog-cache",
+      "x-goog-generation"
+    ],
+    "cert_keywords": [
+      "Google",
+      "Google Trust Services"
+    ]
   },
   {
     "name": "Alibaba Cloud CDN",
-    "cname_patterns": ["*.alicdn.com", "*.kunlunca.com", "*.kunlunea.com", "*.kunlunar.com", "*.kunluncan.com", "*.kunlunhuf.com", "*.kunlunsl.com", "*.kunlungem.com", "*.kunlungr.com", "*.kunlunhuf.com", "*.kunlunno.com", "*.kunlunaq.com", "*.kunlunpi.com", "*.kunlunra.com", "*.kunlunso.com", "*.kunlunta.com", "*.kunlunvi.com", "*.kunlunwe.com"],
-    "ip_ranges": ["47.246.0.0/16", "47.250.0.0/15", "47.252.0.0/15", "59.82.0.0/20", "59.82.240.0/20", "112.124.159.0/24", "198.11.128.0/18", "205.204.101.0/24"],
-    "http_headers": ["x-swift-cachetime", "ali-swift-global-savetime", "x-alicdn-da-ups-status"],
-    "cert_issuers": ["Alibaba", "Alibaba Cloud"]
+    "cname_patterns": [
+      "*.alicdn.com",
+      "*.kunlunca.com",
+      "*.kunlunea.com",
+      "*.kunlunar.com",
+      "*.kunluncan.com",
+      "*.kunlunhuf.com",
+      "*.kunlunsl.com",
+      "*.kunlungem.com",
+      "*.kunlungr.com",
+      "*.kunlunhuf.com",
+      "*.kunlunno.com",
+      "*.kunlunaq.com",
+      "*.kunlunpi.com",
+      "*.kunlunra.com",
+      "*.kunlunso.com",
+      "*.kunlunta.com",
+      "*.kunlunvi.com",
+      "*.kunlunwe.com"
+    ],
+    "ip_ranges": [
+      "47.246.0.0/16",
+      "47.250.0.0/15",
+      "47.252.0.0/15",
+      "59.82.0.0/20",
+      "59.82.240.0/20",
+      "112.124.159.0/24",
+      "198.11.128.0/18",
+      "205.204.101.0/24"
+    ],
+    "http_headers": [
+      "x-swift-cachetime",
+      "ali-swift-global-savetime",
+      "x-alicdn-da-ups-status"
+    ],
+    "cert_keywords": [
+      "Alibaba",
+      "Alibaba Cloud"
+    ]
   },
   {
     "name": "Tencent Cloud CDN",
-    "cname_patterns": ["*.cdntip.com", "*.dnsv1.com", "*.tencdns.net", "*.tcdn.qq.com", "*.qcloud.com", "*.myqcloud.com", "*.tencent-cloud.net"],
-    "ip_ranges": ["119.28.0.0/16", "182.254.0.0/16", "101.226.0.0/16", "117.135.0.0/16", "123.151.0.0/16", "123.126.0.0/16", "117.184.0.0/16", "111.161.0.0/16", "111.162.0.0/16", "111.170.0.0/16", "111.175.0.0/16", "140.207.0.0/16", "180.163.0.0/16", "180.96.0.0/16", "180.97.0.0/16", "183.232.0.0/16", "221.204.0.0/16", "221.205.0.0/16", "222.73.0.0/16", "223.166.0.0/16"],
-    "http_headers": ["x-daa-tunnel", "x-tencent-acceleration", "x-stgw-time"],
-    "cert_issuers": ["Tencent", "TrustAsia"]
-  }
+    "cname_patterns": [
+      "*.cdntip.com",
+      "*.dnsv1.com",
+      "*.tencdns.net",
+      "*.tcdn.qq.com",
+      "*.qcloud.com",
+      "*.myqcloud.com",
+      "*.tencent-cloud.net"
+    ],
+    "ip_ranges": [
+      "119.28.0.0/16",
+      "182.254.0.0/16",
+      "101.226.0.0/16",
+      "117.135.0.0/16",
+      "123.151.0.0/16",
+      "123.126.0.0/16",
+      "117.184.0.0/16",
+      "111.161.0.0/16",
+      "111.162.0.0/16",
+      "111.170.0.0/16",
+      "111.175.0.0/16",
+      "140.207.0.0/16",
+      "180.163.0.0/16",
+      "180.96.0.0/16",
+      "180.97.0.0/16",
+      "183.232.0.0/16",
+      "221.204.0.0/16",
+      "221.205.0.0/16",
+      "222.73.0.0/16",
+      "223.166.0.0/16"
+    ],
+    "http_headers": [
+      "x-daa-tunnel",
+      "x-tencent-acceleration",
+      "x-stgw-time"
+    ],
+    "cert_keywords": [
+      "Tencent",
+      "TrustAsia"
+    ]
+  },
+  {
+    "name": "Baidu Cloud CDN",
+    "cname_patterns": [
+      "*.a.shifen.com",
+      "*.shifen.com",
+      "*.baiducontent.com",
+      "*.bdstatic.com",
+      "*.bdtjrcv.com",
+      "*.baidupcs.com",
+      "*.baidubce.com"
+    ],
+    "ip_ranges": [
+      "110.242.0.0/15",
+      "180.76.0.0/16",
+      "220.181.0.0/16",
+      "111.13.0.0/16",
+      "115.239.0.0/16",
+      "119.63.0.0/16",
+      "123.125.0.0/16"
+    ],
+    "http_headers": [
+      "Bdpagetype",
+      "Bdqid",
+      "Traceid",
+      "BDSVRTM"
+    ],
+    "server_patterns": [
+      "BWS"
+    ],
+    "cert_keywords": [
+      "Beijing Baidu Netcom Science Technology Co., Ltd",
+      "GlobalSign"
+    ]
+  },{
+  "name": "Bilibili Cloud",
+  "cname_patterns": [
+    "*.bilibili.com"
+  ],
+  "ip_ranges": [
+    "119.3.70.188/32",
+    "139.159.241.37/32",
+    "8.134.50.24/32",
+    "47.103.24.173/32"
+  ],
+  "http_headers": [
+    "X-Cache-Webcdn"
+  ],
+  "cert_keywords": [
+    "GlobalSign",
+    "Bilibili",
+    "上海幻电信息科技有限公司"
+  ]
+},
+  {
+  "name": "ByteDance CDN",
+  "cname_patterns": [
+    "*.volcgslb.com",
+    "*.volcgtm.com"
+  ],
+  "ip_ranges": [
+    "220.181.136.0/24",
+    "220.181.137.0/24"
+  ],
+  "http_headers": [
+    "X-Bdcdn-Cache-Status",
+    "X-Request-Id",
+    "X-Request-Ip",
+    "X-Response-Cache",
+    "X-Response-Cinfo",
+    "X-Tt-Trace-Tag"
+  ],
+  "server_patterns": [
+    "Byte-nginx"
+  ],
+  "cert_keywords": []
+}
 ] 
