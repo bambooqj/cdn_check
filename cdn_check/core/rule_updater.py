@@ -5,8 +5,6 @@
 import json
 import logging
 import os
-import time
-import hashlib
 import requests
 from typing import Dict, List, Any, Optional, Tuple
 from datetime import datetime

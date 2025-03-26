@@ -6,11 +6,116 @@ import logging
 import json
 import os
 import re
-import fnmatch
 import ipaddress
-from typing import Dict, List, Any, Optional, Tuple, Set
+from typing import Dict, List, Any, Optional, Tuple
 
 logger = logging.getLogger(__name__)
+
+
+def _check_cdn_indicators_in_headers(headers: Dict[str, str], rule: Dict[str, Any]) -> Tuple[bool, List[str]]:
+    """
+    检查HTTP头中是否包含特定CDN提供商的指标
+
+    Args:
+        headers: HTTP响应头
+        rule: CDN规则
+
+    Returns:
+        (是否匹配, 匹配的指标列表)
+    """
+    if not headers:
+        return False, []
+
+    indicators = []
+
+    # 检查特定HTTP头
+    for header in rule.get('http_headers', []):
+        header_lower = header.lower()
+        for actual_header in headers:
+            if header_lower in actual_header.lower():
+                indicators.append(f"HTTP头匹配: {actual_header}={headers[actual_header]}")
+                break
+
+    # 检查Server头中的特定模式
+    if 'server' in headers and 'server_patterns' in rule:
+        server_value = headers['server'].lower()
+        for pattern in rule.get('server_patterns', []):
+            if pattern.lower() in server_value:
+                indicators.append(f"Server头匹配: server={headers['server']} (模式: {pattern})")
+
+    return len(indicators) > 0, indicators
+
+
+def _check_cert_keywords(cert_info: Dict[str, Any], rule: Dict[str, Any]) -> Tuple[bool, List[str]]:
+    """
+    检查证书信息中是否包含关键词
+
+    Args:
+        cert_info: 完整的证书信息
+        rule: CDN规则
+
+    Returns:
+        (是否匹配, 匹配的指标列表)
+    """
+    if not cert_info or not rule.get('cert_keywords'):
+        return False, []
+
+    indicators = []
+
+    # 将证书信息转换为字符串以便搜索
+    cert_str = json.dumps(cert_info, ensure_ascii=False).lower()
+
+    # 检查每个关键词
+    for keyword in rule.get('cert_keywords', []):
+        if keyword.lower() in cert_str:
+            indicators.append(f"证书信息包含关键词: {keyword}")
+
+    return len(indicators) > 0, indicators
+
+
+def _is_ip_in_range(ip: str, ip_range: str) -> bool:
+    """
+    检查IP是否在指定范围内
+
+    Args:
+        ip: IP地址
+        ip_range: IP范围（CIDR格式）
+
+    Returns:
+        是否在范围内
+    """
+    try:
+        return ipaddress.ip_address(ip) in ipaddress.ip_network(ip_range)
+    except Exception as e:
+        logger.error(f"IP范围检查出错: {str(e)}")
+        return False
+
+
+def _match_cname(cname: str, pattern: str) -> bool:
+    """
+    匹配CNAME和模式
+
+    Args:
+        cname: CNAME记录
+        pattern: 匹配模式
+
+    Returns:
+        是否匹配
+    """
+    # 将CNAME和模式都转换为小写
+    cname = cname.lower()
+    pattern = pattern.lower()
+    if cname.endswith('.'):
+        cname = cname[:-1]
+    # 如果模式以*开头，进行通配符匹配
+    if pattern.startswith('*.'):
+        domain_part = pattern[2:]  # 去掉*.
+        # 检查是否是子域名
+        return cname.endswith(domain_part)
+    # 否则进行精确匹配
+    else:
+        return cname.endswith(pattern)
+
 
 class CDNDetector:
     """CDN检测器，用于检测目标是否使用CDN"""
@@ -294,33 +399,7 @@ class CDNDetector:
             logger.info(f"已加载 {len(self._rules)} 条规则")
         except Exception as e:
             logger.error(f"加载规则文件失败: {str(e)}")
-    
-    def _check_cert_keywords(self, cert_info: Dict[str, Any], rule: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        """
-        检查证书信息中是否包含关键词
-        
-        Args:
-            cert_info: 完整的证书信息
-            rule: CDN规则
-            
-        Returns:
-            (是否匹配, 匹配的指标列表)
-        """
-        if not cert_info or not rule.get('cert_keywords'):
-            return False, []
-            
-        indicators = []
-        
-        # 将证书信息转换为字符串以便搜索
-        cert_str = json.dumps(cert_info, ensure_ascii=False).lower()
-        
-        # 检查每个关键词
-        for keyword in rule.get('cert_keywords', []):
-            if keyword.lower() in cert_str:
-                indicators.append(f"证书信息包含关键词: {keyword}")
-        
-        return len(indicators) > 0, indicators
-    
+
     def _check_http_headers(self, headers: Dict[str, str]) -> Tuple[bool, List[str]]:
         """
         检查HTTP头是否包含CDN特征
@@ -382,40 +461,7 @@ class CDNDetector:
                     indicators.append(f"Via头特征匹配: via={via_value} ({provider})")
         
         return len(indicators) > 0, indicators
-    
-    def _check_cdn_indicators_in_headers(self, headers: Dict[str, str], rule: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        """
-        检查HTTP头中是否包含特定CDN提供商的指标
-        
-        Args:
-            headers: HTTP响应头
-            rule: CDN规则
-            
-        Returns:
-            (是否匹配, 匹配的指标列表)
-        """
-        if not headers:
-            return False, []
-            
-        indicators = []
-        
-        # 检查特定HTTP头
-        for header in rule.get('http_headers', []):
-            header_lower = header.lower()
-            for actual_header in headers:
-                if header_lower in actual_header.lower():
-                    indicators.append(f"HTTP头匹配: {actual_header}={headers[actual_header]}")
-                    break
-        
-        # 检查Server头中的特定模式
-        if 'server' in headers and 'server_patterns' in rule:
-            server_value = headers['server'].lower()
-            for pattern in rule.get('server_patterns', []):
-                if pattern.lower() in server_value:
-                    indicators.append(f"Server头匹配: server={headers['server']} (模式: {pattern})")
-        
-        return len(indicators) > 0, indicators
-    
+
     def detect(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """检测是否使用CDN"""
         # 打印输入数据
@@ -485,7 +531,7 @@ class CDNDetector:
                     logger.info(f"对比CNAME: {cname} 与模式: {pattern_lower}")
                     
                     # 使用_match_cname进行匹配
-                    if self._match_cname(cname, pattern_lower):
+                    if _match_cname(cname, pattern_lower):
                         scores[provider] += 0.6
                         provider_indicators.append(f"CNAME匹配: {cname} -> {pattern}")
                         logger.info(f"CNAME匹配成功! 得分: {scores[provider]}")
@@ -496,7 +542,7 @@ class CDNDetector:
                 for ip_range in rule.get('ip_ranges', []):
                     logger.info(f"检查IP: {ip} 是否在范围: {ip_range}")
                     try:
-                        if self._is_ip_in_range(ip, ip_range):
+                        if _is_ip_in_range(ip, ip_range):
                             scores[provider] += 0.3
                             provider_indicators.append(f"IP匹配: {ip} -> {ip_range}")
                             logger.info(f"IP匹配成功! 得分: {scores[provider]}")
@@ -506,7 +552,7 @@ class CDNDetector:
             
             # HTTP头部匹配
             headers = data.get('http_headers', {})
-            has_headers, header_indicators = self._check_cdn_indicators_in_headers(headers, rule)
+            has_headers, header_indicators = _check_cdn_indicators_in_headers(headers, rule)
             if has_headers:
                 scores[provider] += 0.3
                 provider_indicators.extend(header_indicators)
@@ -514,7 +560,7 @@ class CDNDetector:
             
             # 证书关键词匹配
             if data.get('cert'):
-                has_cert, cert_indicators = self._check_cert_keywords(data['cert'], rule)
+                has_cert, cert_indicators = _check_cert_keywords(data['cert'], rule)
                 if has_cert:
                     scores[provider] += 0.3
                     provider_indicators.extend(cert_indicators)
@@ -536,7 +582,7 @@ class CDNDetector:
             if max_score >= 0.3:  # 置信度阈值
                 provider = max_providers
                 if max_score == 0.3:
-                    provider = 'Unkonw CDN'
+                    provider = "UnknownCDN"
                 return {
                     'is_cdn': True,
                     'cdn_provider': provider,
@@ -548,7 +594,7 @@ class CDNDetector:
             logger.info("未匹配到具体CDN提供商，但检测到通用CDN特征")
             return {
                 'is_cdn': True,
-                'cdn_provider': 'Unknown CDN',
+                'cdn_provider': "UnknownCDN",
                 'confidence': 0.3,  # 基于通用特征的置信度
                 'indicators': generic_cdn_indicators
             }
@@ -598,45 +644,4 @@ class CDNDetector:
             logger.info(f"从 {file_path} 加载了 {len(data['Item'])} 条 CDN 规则")
         except Exception as e:
             logger.error(f"加载 CDN.JSON 失败: {str(e)}")
-    
-    def _is_ip_in_range(self, ip: str, ip_range: str) -> bool:
-        """
-        检查IP是否在指定范围内
-        
-        Args:
-            ip: IP地址
-            ip_range: IP范围（CIDR格式）
-            
-        Returns:
-            是否在范围内
-        """
-        try:
-            return ipaddress.ip_address(ip) in ipaddress.ip_network(ip_range)
-        except Exception as e:
-            logger.error(f"IP范围检查出错: {str(e)}")
-            return False
-    
-    def _match_cname(self, cname: str, pattern: str) -> bool:
-        """
-        匹配CNAME和模式
-        
-        Args:
-            cname: CNAME记录
-            pattern: 匹配模式
-            
-        Returns:
-            是否匹配
-        """
-        # 将CNAME和模式都转换为小写
-        cname = cname.lower()
-        pattern = pattern.lower()
-        if cname.endswith('.'):
-            cname = cname[:-1]
-        # 如果模式以*开头，进行通配符匹配
-        if pattern.startswith('*.'):
-            domain_part = pattern[2:]  # 去掉*.
-            # 检查是否是子域名
-            return cname.endswith(domain_part)
-        # 否则进行精确匹配
-        else:
-            return cname.endswith(pattern)
+

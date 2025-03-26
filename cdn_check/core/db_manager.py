@@ -76,6 +76,7 @@ class DBManager:
     
     def _create_tables(self) -> None:
         """创建必要的数据库表"""
+        global conn
         try:
             conn = self._connect()
             cursor = conn.cursor()

@@ -7,13 +7,94 @@ import socket
 import logging
 import json
 import os
-from typing import Dict, Any, List, Optional, Tuple, Union
-from datetime import datetime
+from typing import Dict, Any, List, Optional
 from cryptography import x509
 from cryptography.hazmat.primitives import hashes
 from cryptography.x509.oid import NameOID
 
 logger = logging.getLogger(__name__)
+
+
+def _parse_certificate(cert: x509.Certificate) -> Dict[str, Any]:
+    """
+    解析X.509证书
+
+    Args:
+        cert: X.509证书对象
+
+    Returns:
+        证书信息字典
+    """
+    def parse_name(name_v: x509.Name) -> Dict[str, str]:
+        """解析证书名称"""
+        result = {}
+        for attr in name_v:
+            oid_name = attr.oid._name
+            value = attr.value
+            result[oid_name] = value
+        return result
+
+    # 解析基本信息，使用兼容性更好的API
+    try:
+        # 尝试使用新版API
+        not_before = cert.not_valid_before_utc.isoformat()
+        not_after = cert.not_valid_after_utc.isoformat()
+    except AttributeError:
+        # 回退到旧版API
+        try:
+            not_before = cert.not_valid_before.isoformat()
+            not_after = cert.not_valid_after.isoformat()
+        except AttributeError:
+            # 最后的回退方案
+            not_before = str(cert.not_valid_before)
+            not_after = str(cert.not_valid_after)
+
+    cert_info = {
+        'subject': parse_name(cert.subject),
+        'issuer': parse_name(cert.issuer),
+        'version': cert.version.value,
+        'serialNumber': format(cert.serial_number, 'x'),
+        'notBefore': not_before,
+        'notAfter': not_after,
+        'subjectAltName': [],
+        'fingerprint': {
+            'sha1': cert.fingerprint(hashes.SHA1()).hex(),
+            'sha256': cert.fingerprint(hashes.SHA256()).hex()
+        }
+    }
+
+    # 提取常见主题字段
+    subject_fields = {
+        'commonName': NameOID.COMMON_NAME,
+        'organization': NameOID.ORGANIZATION_NAME,
+        'organizationalUnit': NameOID.ORGANIZATIONAL_UNIT_NAME,
+        'country': NameOID.COUNTRY_NAME,
+        'locality': NameOID.LOCALITY_NAME,
+        'state': NameOID.STATE_OR_PROVINCE_NAME
+    }
+
+    for field_name, oid in subject_fields.items():
+        try:
+            values = cert.subject.get_attributes_for_oid(oid)
+            if values:
+                cert_info[field_name] = [attr.value for attr in values]
+        except Exception:
+            pass
+
+    # 解析扩展
+    try:
+        for ext in cert.extensions:
+            if ext.oid._name == 'subjectAltName':
+                for name in ext.value:
+                    if isinstance(name, x509.DNSName):
+                        cert_info['subjectAltName'].append(f"DNS:{name.value}")
+                    elif isinstance(name, x509.IPAddress):
+                        cert_info['subjectAltName'].append(f"IP:{name.value}")
+    except Exception as e:
+        logger.warning(f"解析证书扩展失败: {str(e)}")
+
+    return cert_info
+
 
 class CertAnalyzer:
     """证书分析器，用于分析SSL/TLS证书并提取特征"""
@@ -143,7 +224,7 @@ class CertAnalyzer:
 
                         # 解析证书
                         cert = x509.load_der_x509_certificate(cert_der)
-                        cert_info = self._parse_certificate(cert)
+                        cert_info = _parse_certificate(cert)
 
                         # 更新结果
                         result.update({
@@ -156,10 +237,10 @@ class CertAnalyzer:
 
             except socket.timeout:
                 logger.warning(f"连接超时: {hostname}:{port} (重试 {retry+1}/{max_retries})")
-            except socket.error as e:
-                logger.warning(f"连接错误: {hostname}:{port} - {str(e)} (重试 {retry+1}/{max_retries})")
             except ssl.SSLError as e:
                 logger.warning(f"SSL错误: {hostname}:{port} - {str(e)} (重试 {retry+1}/{max_retries})")
+            except socket.error as e:
+                logger.warning(f"连接错误: {hostname}:{port} - {str(e)} (重试 {retry+1}/{max_retries})")
             except Exception as e:
                 logger.warning(f"获取证书失败: {hostname}:{port} - {str(e)} (重试 {retry+1}/{max_retries})")
 
@@ -168,86 +249,6 @@ class CertAnalyzer:
         result['cert'] = empty_cert
         logger.error(f"获取证书失败: {hostname}:{port} - {result['error']}")
         return result
-
-    def _parse_certificate(self, cert: x509.Certificate) -> Dict[str, Any]:
-        """
-        解析X.509证书
-        
-        Args:
-            cert: X.509证书对象
-            
-        Returns:
-            证书信息字典
-        """
-        def parse_name(name: x509.Name) -> Dict[str, str]:
-            """解析证书名称"""
-            result = {}
-            for attr in name:
-                oid_name = attr.oid._name
-                value = attr.value
-                result[oid_name] = value
-            return result
-
-        # 解析基本信息，使用兼容性更好的API
-        try:
-            # 尝试使用新版API
-            not_before = cert.not_valid_before_utc.isoformat()
-            not_after = cert.not_valid_after_utc.isoformat()
-        except AttributeError:
-            # 回退到旧版API
-            try:
-                not_before = cert.not_valid_before.isoformat()
-                not_after = cert.not_valid_after.isoformat()
-            except AttributeError:
-                # 最后的回退方案
-                not_before = str(cert.not_valid_before)
-                not_after = str(cert.not_valid_after)
-
-        cert_info = {
-            'subject': parse_name(cert.subject),
-            'issuer': parse_name(cert.issuer),
-            'version': cert.version.value,
-            'serialNumber': format(cert.serial_number, 'x'),
-            'notBefore': not_before,
-            'notAfter': not_after,
-            'subjectAltName': [],
-            'fingerprint': {
-                'sha1': cert.fingerprint(hashes.SHA1()).hex(),
-                'sha256': cert.fingerprint(hashes.SHA256()).hex()
-            }
-        }
-
-        # 提取常见主题字段
-        subject_fields = {
-            'commonName': NameOID.COMMON_NAME,
-            'organization': NameOID.ORGANIZATION_NAME,
-            'organizationalUnit': NameOID.ORGANIZATIONAL_UNIT_NAME,
-            'country': NameOID.COUNTRY_NAME,
-            'locality': NameOID.LOCALITY_NAME,
-            'state': NameOID.STATE_OR_PROVINCE_NAME
-        }
-        
-        for field_name, oid in subject_fields.items():
-            try:
-                values = cert.subject.get_attributes_for_oid(oid)
-                if values:
-                    cert_info[field_name] = [attr.value for attr in values]
-            except Exception:
-                pass
-
-        # 解析扩展
-        try:
-            for ext in cert.extensions:
-                if ext.oid._name == 'subjectAltName':
-                    for name in ext.value:
-                        if isinstance(name, x509.DNSName):
-                            cert_info['subjectAltName'].append(f"DNS:{name.value}")
-                        elif isinstance(name, x509.IPAddress):
-                            cert_info['subjectAltName'].append(f"IP:{name.value}")
-        except Exception as e:
-            logger.warning(f"解析证书扩展失败: {str(e)}")
-
-        return cert_info
 
     def analyze_certificate(self, cert_info: Dict[str, Any]) -> Dict[str, Any]:
         """

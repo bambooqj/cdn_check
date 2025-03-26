@@ -6,7 +6,7 @@ import dns.resolver
 import dns.exception
 import logging
 import socket
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any
 from cachetools import TTLCache
 
 logger = logging.getLogger(__name__)
