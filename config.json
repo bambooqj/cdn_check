@@ -36,25 +36,6 @@
     "file": "log/cdn_check.log",
     "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
   },
-  "cdn_detection_weights": {
-    "ip_range": 0.3,
-    "ip_diversity": {
-      "3-5": 0.1,
-      "6-10": 0.3,
-      "10+": 0.5
-    },
-    "geo_diversity": 0.3,
-    "http_header": 0.5,
-    "cache_header": 0.2,
-    "cname": 0.9,
-    "cert": 0.3,
-    "ttl": 0.2,
-    "dimension_bonus": {
-      "2": 1.1,
-      "3+": 1.1
-    },
-    "http_multi_bonus": 0.3
-  },
   "httpheader_check": [
     {
       "header": "Server",

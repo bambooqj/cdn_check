@@ -520,17 +520,15 @@ def batch(ctx, file: str, output: Optional[str], format: str, concurrency: int):
         task = progress.add_task("[cyan]检测中...", total=total)
         
         # 执行批量检测
-        batch_results = asyncio.run(app.check_targets(targets, concurrency=concurrency))
+        batch_results = asyncio.run(app.check_targets(targets))
         
         # 更新进度条
         progress.update(task, completed=total)
     
     # 处理结果
-    for target, result in batch_results.items():
-        results.append({
-            'target': target,
-            **result
-        })
+    for result in batch_results:
+        print(f"检测结果: {result['target']} - {result['success']}")
+        results.append(result)
     
     # 统计结果
     total = len(results)
@@ -572,7 +570,7 @@ def batch(ctx, file: str, output: Optional[str], format: str, concurrency: int):
                 provider = "-"
                 confidence = "-"
             
-            table.add_row(target, status, is_cdn, provider, confidence)
+            table.add_row(target, status, is_cdn, ','.join(provider), confidence)
         
         console.print(table)
         
