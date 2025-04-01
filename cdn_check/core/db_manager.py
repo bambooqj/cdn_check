@@ -177,7 +177,16 @@ class DBManager:
             
             # 1. 保存检测会话
             is_cdn = result.get('is_cdn', False)
-            cdn_provider = ','.join(result.get('cdn_provider'))
+            
+            # 处理cdn_provider可能的不同类型
+            provider = result.get('cdn_provider')
+            if provider is None:
+                cdn_provider = ''
+            elif isinstance(provider, list):
+                cdn_provider = ','.join(provider)
+            else:
+                cdn_provider = str(provider)
+                
             confidence = result.get('confidence', 0.0)
             timestamp = datetime.datetime.now().isoformat()
             

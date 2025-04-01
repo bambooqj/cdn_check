@@ -198,14 +198,47 @@ class CDNCheckApp:
             if ':' in hostname:
                 hostname = hostname.split(':')[0]
         
+        # 检查是否为IP地址
+        is_ip_address = False
+        try:
+            import ipaddress
+            ipaddress.ip_address(hostname)
+            is_ip_address = True
+            logger.info(f"目标是IP地址: {hostname}")
+        except ValueError:
+            is_ip_address = False
+        
         try:
             # 并行执行所有插件
             dns_result = await self._run_plugin('dns_resolver', {'domain': hostname})
-            http_result = await self._run_plugin('http_requester', {'url': target})
+            
+            # 构建HTTP请求URL
+            http_url = target
+            if not http_url.startswith(('http://', 'https://')):
+                # 对IP地址和域名都尝试HTTPS和HTTP
+                https_url = f"https://{hostname}"
+                http_url = f"http://{hostname}"
+                
+                # 先尝试HTTPS
+                https_result = await self._run_plugin('http_requester', {'url': https_url})
+                if https_result and https_result.get('success', False):
+                    http_result = https_result
+                    http_url = https_url
+                    logger.info(f"成功使用HTTPS访问: {https_url}")
+                else:
+                    # 如果HTTPS失败，尝试HTTP
+                    http_result = await self._run_plugin('http_requester', {'url': http_url})
+                    logger.info(f"使用HTTP访问: {http_url}")
+            else:
+                # 如果已经指定了协议，直接使用
+                http_result = await self._run_plugin('http_requester', {'url': http_url})
             
             # 预处理IP和CNAME数据
             ip_list = []
-            if dns_result and 'a_records' in dns_result:
+            if is_ip_address:
+                # 如果目标本身是IP，直接添加到IP列表
+                ip_list = [hostname]
+            elif dns_result and 'a_records' in dns_result:
                 ip_list = dns_result['a_records']
             
             cname_list = []
@@ -215,15 +248,22 @@ class CDNCheckApp:
                 elif dns_result['cname_chain']:
                     cname_list = [dns_result['cname_chain']]
             
-            # 获取证书信息
+            # 获取证书信息 - 对IP地址也尝试获取证书
             cert_result = await self._run_plugin('cert_analyzer', {'domain': hostname})
             
             # 获取IP地理信息
             ip_info = {}
-            for ip in ip_list:
-                ip_result = await self._run_plugin('ip_analyzer', {'ip': ip})
+            if is_ip_address:
+                # 如果目标本身是IP，直接分析
+                ip_result = await self._run_plugin('ip_analyzer', {'ip': hostname})
                 if ip_result:
-                    ip_info[ip] = ip_result
+                    ip_info[hostname] = ip_result
+            else:
+                # 否则分析解析得到的所有IP
+                for ip in ip_list:
+                    ip_result = await self._run_plugin('ip_analyzer', {'ip': ip})
+                    if ip_result:
+                        ip_info[ip] = ip_result
             
             # 准备CDN检测数据
             cdn_data = {
@@ -232,7 +272,8 @@ class CDNCheckApp:
                 'cname_chain': cname_list,
                 'http_headers': http_result.get('headers', {}) if http_result else {},
                 'cert': cert_result,
-                'ip_info': ip_info
+                'ip_info': ip_info,
+                'is_ip_address': is_ip_address  # 添加标志表明目标是IP地址
             }
             
             # 执行CDN检测

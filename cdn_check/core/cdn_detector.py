@@ -459,9 +459,8 @@ class CDNDetector:
             for keyword, provider in cdn_keywords:
                 if keyword in via_value:
                     indicators.append(f"Via头特征匹配: via={via_value} ({provider})")
-        
         return len(indicators) > 0, indicators
-
+        
     def detect(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """检测是否使用CDN"""
         # 打印输入数据
@@ -472,6 +471,11 @@ class CDNDetector:
         logger.info(f"HTTP头: {data.get('http_headers', {})}")
         if data.get('cert'):
             logger.info(f"证书信息: {json.dumps(data.get('cert'), indent=2, ensure_ascii=False)}")
+        
+        # 检查是否为IP地址检测
+        is_ip_address = data.get('is_ip_address', False)
+        if is_ip_address:
+            logger.info("目标是IP地址，使用IP地址检测逻辑")
         
         scores = {}
         indicators = {}
@@ -524,45 +528,50 @@ class CDNDetector:
                 
             provider_indicators = []
             
-            # CNAME模式匹配
-            for cname in cname_chain:
-                for pattern in rule.get('cname_patterns', []):
-                    pattern_lower = pattern.lower()
-                    logger.info(f"对比CNAME: {cname} 与模式: {pattern_lower}")
-                    
-                    # 使用_match_cname进行匹配
-                    if _match_cname(cname, pattern_lower):
-                        scores[provider] += 0.6
-                        provider_indicators.append(f"CNAME匹配: {cname} -> {pattern}")
-                        logger.info(f"CNAME匹配成功! 得分: {scores[provider]}")
-                        break
+            # 如果不是IP地址检测，则进行CNAME模式匹配
+            if not is_ip_address:
+                # CNAME模式匹配
+                for cname in cname_chain:
+                    for pattern in rule.get('cname_patterns', []):
+                        pattern_lower = pattern.lower()
+                        logger.info(f"对比CNAME: {cname} 与模式: {pattern_lower}")
+                        
+                        # 使用_match_cname进行匹配
+                        if _match_cname(cname, pattern_lower):
+                            scores[provider] += 0.6
+                            provider_indicators.append(f"CNAME匹配: {cname} -> {pattern}")
+                            logger.info(f"CNAME匹配成功! 得分: {scores[provider]}")
+                            break
             
-            # IP范围匹配
+            # IP范围匹配 - 对IP地址检测给予更高权重
+            ip_match_score = 0.5 if is_ip_address else 0.3
             for ip in data.get('ips', []):
                 for ip_range in rule.get('ip_ranges', []):
                     logger.info(f"检查IP: {ip} 是否在范围: {ip_range}")
                     try:
                         if _is_ip_in_range(ip, ip_range):
-                            scores[provider] += 0.3
+                            scores[provider] += ip_match_score
                             provider_indicators.append(f"IP匹配: {ip} -> {ip_range}")
                             logger.info(f"IP匹配成功! 得分: {scores[provider]}")
                             break
                     except Exception as e:
                         logger.error(f"IP范围检查出错: {str(e)}")
             
-            # HTTP头部匹配
+            # HTTP头部匹配 - 对IP地址检测给予更高权重
+            http_match_score = 0.5 if is_ip_address else 0.3
             headers = data.get('http_headers', {})
             has_headers, header_indicators = _check_cdn_indicators_in_headers(headers, rule)
             if has_headers:
-                scores[provider] += 0.3
+                scores[provider] += http_match_score
                 provider_indicators.extend(header_indicators)
                 logger.info(f"HTTP头匹配成功! 得分: {scores[provider]}")
             
-            # 证书关键词匹配
+            # 证书关键词匹配 - 对IP地址检测给予更高权重
+            cert_match_score = 0.5 if is_ip_address else 0.3
             if data.get('cert'):
                 has_cert, cert_indicators = _check_cert_keywords(data['cert'], rule)
                 if has_cert:
-                    scores[provider] += 0.3
+                    scores[provider] += cert_match_score
                     provider_indicators.extend(cert_indicators)
                     logger.info(f"证书关键词匹配成功! 得分: {scores[provider]}")
             
@@ -579,15 +588,18 @@ class CDNDetector:
             logger.info(f"最高得分: {max_score}")
             logger.info(f"最高得分提供商: {max_providers}")
             
-            if max_score >= 0.3:  # 置信度阈值
+            # 对IP地址检测使用较低的置信度阈值
+            confidence_threshold = 0.3 if not is_ip_address else 0.2
+            
+            if max_score >= confidence_threshold:  # 置信度阈值
                 provider = max_providers
-                if max_score == 0.3:
+                if max_score == confidence_threshold:
                     provider = "UnknownCDN"
                 return {
                     'is_cdn': True,
                     'cdn_provider': provider,
                     'confidence': max_score,
-                    'indicators': indicators.get(provider[0], [])
+                    'indicators': indicators.get(provider[0], []) if isinstance(provider, list) and provider else []
                 }
         # 如果没有匹配到具体CDN提供商，但检测到通用CDN特征
         if generic_cdn_indicators:
@@ -595,11 +607,11 @@ class CDNDetector:
             return {
                 'is_cdn': True,
                 'cdn_provider': "UnknownCDN",
-                'confidence': 0.3,  # 基于通用特征的置信度
+                'confidence': 0.3 if not is_ip_address else 0.2,  # 基于通用特征的置信度
                 'indicators': generic_cdn_indicators
             }
 
-        
+            
         logger.info("未检测到CDN")
         return {
             'is_cdn': False,
@@ -607,7 +619,105 @@ class CDNDetector:
             'confidence': 0.0,
             'indicators': []
         }
-    
+        
+    def get_rules(self) -> List[Dict[str, Any]]:
+        """
+        获取所有CDN规则
+        
+        Returns:
+            CDN规则列表
+        """
+        return self._rules
+        
+    def save_rules(self, file_path: Optional[str] = None) -> bool:
+        """
+        保存CDN规则到文件
+        
+        Args:
+            file_path: 文件路径，如果为None则使用当前规则文件路径
+            
+        Returns:
+            是否保存成功
+        """
+        if file_path is None:
+            file_path = self._rules_file
+            
+        if not file_path:
+            logger.error("保存规则失败：未指定文件路径")
+            return False
+            
+        try:
+            # 确保目录存在
+            os.makedirs(os.path.dirname(file_path), exist_ok=True)
+            
+            with open(file_path, 'w', encoding='utf-8') as f:
+                json.dump(self._rules, f, ensure_ascii=False, indent=2)
+                
+            logger.info(f"已保存 {len(self._rules)} 条规则到 {file_path}")
+            return True
+        except Exception as e:
+            logger.error(f"保存规则文件失败: {str(e)}")
+            return False
+            
+    def provide_feedback(self, result: Dict[str, Any], is_correct: bool, actual_provider: Optional[str] = None) -> None:
+        """
+        提供检测结果的反馈，用于自学习
+        
+        Args:
+            result: 检测结果
+            is_correct: 检测结果是否正确
+            actual_provider: 实际的CDN提供商（如果已知）
+        """
+        if not result:
+            logger.warning("无法提供反馈，检测结果为空")
+            return
+            
+        # 记录反馈
+        logger.info(f"收到检测反馈: 正确={is_correct}, 实际提供商={actual_provider}")
+        
+        # 如果检测结果不正确，且知道实际提供商，可以调整规则
+        if not is_correct and actual_provider:
+            # 1. 如果实际提供商是"无CDN"，但检测为有CDN，可以降低置信度阈值
+            if actual_provider.lower() == "无cdn" or actual_provider.lower() == "none":
+                logger.info("实际无CDN，但检测为有CDN，记录误报")
+                # 这里可以实现更复杂的逻辑，如记录误报的特征
+                
+            # 2. 如果实际提供商存在，但检测错误，可以增强该提供商的规则
+            else:
+                # 查找是否已有该提供商的规则
+                existing_rule = None
+                for rule in self._rules:
+                    if rule['name'].lower() == actual_provider.lower():
+                        existing_rule = rule
+                        break
+                        
+                if not existing_rule:
+                    # 如果没有该提供商的规则，创建一个新规则
+                    new_rule = {
+                        'name': actual_provider,
+                        'cname_patterns': [],
+                        'http_headers': [],
+                        'cert_keywords': [],
+                        'server_patterns': [],
+                        'ip_ranges': []
+                    }
+                    
+                    # 如果有CNAME信息，添加到规则中
+                    if 'cname_chain' in result and result['cname_chain']:
+                        for cname in result['cname_chain']:
+                            # 提取域名部分作为模式
+                            domain_parts = cname.split('.')
+                            if len(domain_parts) >= 2:
+                                pattern = f"*.{'.'.join(domain_parts[-2:])}"
+                                new_rule['cname_patterns'].append(pattern)
+                                logger.info(f"从CNAME {cname} 添加模式 {pattern} 到新规则")
+                    
+                    self.add_rule(new_rule)
+                    logger.info(f"创建新规则: {actual_provider}")
+                    
+                    # 保存更新后的规则
+                    self.save_rules()
+        
     def _load_cdn_json(self, file_path: str) -> None:
         """
         加载 CDN.JSON 格式的规则文件

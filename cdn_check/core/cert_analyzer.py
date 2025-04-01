@@ -164,7 +164,7 @@ class CertAnalyzer:
         获取SSL/TLS证书
         
         Args:
-            hostname: 主机名
+            hostname: 主机名或IP地址
             port: 端口号，如果为None则使用默认端口
             
         Returns:
@@ -191,6 +191,16 @@ class CertAnalyzer:
             'notAfter': None,
             'subjectAltName': []
         }
+        
+        # 检查是否为IP地址
+        is_ip_address = False
+        try:
+            import ipaddress
+            ipaddress.ip_address(hostname)
+            is_ip_address = True
+            logger.info(f"目标是IP地址: {hostname}")
+        except ValueError:
+            is_ip_address = False
 
         # 重试机制
         max_retries = 3
@@ -215,25 +225,48 @@ class CertAnalyzer:
 
                 # 建立连接
                 with socket.create_connection((hostname, port), timeout=timeout) as sock:
-                    with context.wrap_socket(sock, server_hostname=hostname) as ssock:
-                        # 获取证书
-                        cert_der = ssock.getpeercert(binary_form=True)
-                        if not cert_der:
-                            logger.warning(f"未获取到证书内容: {hostname}:{port} (重试 {retry+1}/{max_retries})")
-                            continue
+                    # 如果是IP地址，不使用SNI (Server Name Indication)
+                    if is_ip_address:
+                        with context.wrap_socket(sock) as ssock:
+                            # 获取证书
+                            cert_der = ssock.getpeercert(binary_form=True)
+                            if not cert_der:
+                                logger.warning(f"未获取到证书内容: {hostname}:{port} (重试 {retry+1}/{max_retries})")
+                                continue
+                            
+                            # 解析证书
+                            cert = x509.load_der_x509_certificate(cert_der)
+                            cert_info = _parse_certificate(cert)
+                            
+                            # 更新结果
+                            result.update({
+                                'success': True,
+                                'cert': cert_info
+                            })
+                            
+                            logger.info(f"成功获取IP地址证书: {hostname}:{port}")
+                            return result
+                    else:
+                        # 对域名使用SNI
+                        with context.wrap_socket(sock, server_hostname=hostname) as ssock:
+                            # 获取证书
+                            cert_der = ssock.getpeercert(binary_form=True)
+                            if not cert_der:
+                                logger.warning(f"未获取到证书内容: {hostname}:{port} (重试 {retry+1}/{max_retries})")
+                                continue
 
-                        # 解析证书
-                        cert = x509.load_der_x509_certificate(cert_der)
-                        cert_info = _parse_certificate(cert)
-
-                        # 更新结果
-                        result.update({
-                            'success': True,
-                            'cert': cert_info
-                        })
-
-                        logger.info(f"成功获取证书: {hostname}:{port}")
-                        return result
+                            # 解析证书
+                            cert = x509.load_der_x509_certificate(cert_der)
+                            cert_info = _parse_certificate(cert)
+                            
+                            # 更新结果
+                            result.update({
+                                'success': True,
+                                'cert': cert_info
+                            })
+                            
+                            logger.info(f"成功获取证书: {hostname}:{port}")
+                            return result
 
             except socket.timeout:
                 logger.warning(f"连接超时: {hostname}:{port} (重试 {retry+1}/{max_retries})")

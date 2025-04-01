@@ -1,0 +1,403 @@
+2025-03-21 14:11:13,830 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:11:13,833 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: attempt to write a readonly database
+2025-03-21 14:11:13,833 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:12:42,170 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:12:42,172 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:12:42,172 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:13:14,591 - cdn_check.core.cdn_detector - ERROR - 加载规则文件失败: Expecting value: line 321 column 3 (char 6517)
+2025-03-21 14:13:14,593 - cdn_check.core.cert_analyzer - ERROR - 加载CDN规则失败: Expecting value: line 321 column 3 (char 6517)
+2025-03-21 14:13:48,289 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:14:06,373 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:14:44,971 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:14:44,974 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:14:44,975 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:15:01,309 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:15:39,900 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:15:39,903 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:15:39,903 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:15:58,794 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:19:59,177 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:21:45,592 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:22:26,367 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:23:03,038 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:23:32,386 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:28:12,255 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:42:19,927 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:42:19,931 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:42:19,931 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:42:22,682 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:42:22,682 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:42:25,183 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:42:25,183 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:42:26,223 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:42:26,223 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:42:28,003 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:42:28,003 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:42:31,555 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:42:31,555 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:42:33,238 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:42:33,238 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:42:35,143 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:42:35,143 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:42:36,305 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:42:36,305 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:47:22,810 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:47:22,814 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:47:22,814 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:47:26,707 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:47:26,707 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:47:28,976 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:47:28,976 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:47:30,966 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:47:30,966 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:47:32,533 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:47:32,534 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:47:36,415 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:47:36,415 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:47:37,607 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:47:37,607 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:47:39,218 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:47:39,218 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:47:41,175 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:47:41,175 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:48:49,002 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:48:49,005 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:48:49,005 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:48:51,699 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:48:51,699 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:48:57,431 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:48:57,435 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:48:57,435 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:49:01,642 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:49:01,642 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:49:03,711 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:49:03,711 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:49:05,129 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:49:05,129 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:49:06,614 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:49:06,615 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:49:08,793 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:49:08,793 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:49:10,160 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:49:10,160 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:49:11,802 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:49:11,802 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:49:13,068 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:49:13,068 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:52:51,338 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:52:51,342 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:52:51,342 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:53:05,459 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:53:05,459 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:53:07,383 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:53:07,383 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:53:08,640 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:53:08,640 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:53:10,104 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:53:10,104 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:53:12,013 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:53:12,013 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:53:13,260 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:53:13,260 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:53:14,427 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:53:14,427 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:53:16,840 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:53:16,841 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:54:18,019 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 14:54:18,022 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:54:18,022 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:54:21,608 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:54:21,609 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:54:23,666 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:54:23,666 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:54:24,760 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:54:24,760 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:54:27,054 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:54:27,054 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:54:30,242 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:54:30,243 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:54:42,219 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:54:42,219 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:54:43,446 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:54:43,446 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:54:45,070 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 14:54:45,070 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 14:56:32,661 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-21 15:02:21,827 - cdn_check.core.plugin_manager - WARNING - 导入模块失败: cdn_check.plugins.dns_plugin - No module named 'cachetools'
+2025-03-21 15:02:21,878 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-21 15:02:21,884 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-21 15:02:21,884 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-21 15:02:22,232 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-21 15:02:22,233 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-21 15:02:24,449 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 15:02:24,449 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 15:02:24,449 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-21 15:02:24,449 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-21 15:02:25,272 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 15:02:25,272 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 15:02:25,272 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-21 15:02:25,272 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-21 15:02:25,614 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-21 15:02:25,614 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-21 15:02:25,614 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-21 15:02:25,614 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-21 15:02:25,943 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-21 15:02:25,944 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-21 15:02:26,757 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-21 15:02:26,757 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-21 15:02:27,083 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-21 15:02:27,083 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-21 15:02:27,384 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-21 15:02:27,385 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-21 15:03:25,605 - cdn_check.core.plugin_manager - WARNING - 导入模块失败: cdn_check.plugins.dns_plugin - No module named 'cachetools'
+2025-03-21 15:03:25,639 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-24 16:10:00,162 - cdn_check.core.plugin_manager - WARNING - 导入模块失败: cdn_check.plugins.dns_plugin - No module named 'cachetools'
+2025-03-24 16:10:00,212 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-24 16:10:40,384 - cdn_check.core.plugin_manager - WARNING - 导入模块失败: cdn_check.plugins.dns_plugin - No module named 'cachetools'
+2025-03-24 16:10:40,414 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-24 16:10:40,420 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-24 16:10:40,420 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-24 16:10:40,825 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-24 16:10:40,827 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-24 16:10:44,563 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:10:44,564 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:10:44,564 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-24 16:10:44,564 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-24 16:10:45,098 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:10:45,099 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:10:45,099 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-24 16:10:45,099 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-24 16:10:45,421 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:10:45,421 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:10:45,421 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-24 16:10:45,422 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-24 16:10:45,801 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-24 16:10:45,801 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-24 16:10:46,146 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-24 16:10:46,146 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-24 16:10:46,511 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-24 16:10:46,512 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-24 16:10:46,806 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-24 16:10:46,806 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-24 16:14:48,343 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-24 16:14:48,360 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:14:48,360 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:14:52,002 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:14:52,002 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:14:53,644 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:14:53,644 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:14:55,147 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:14:55,147 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:14:56,852 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:14:56,852 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:14:59,236 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:14:59,236 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:15:02,043 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:15:02,044 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:15:03,567 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:15:03,567 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:15:04,720 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:15:04,720 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:15:58,357 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-24 16:15:58,373 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:15:58,373 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:16:02,344 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:16:02,344 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:16:03,899 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:16:03,899 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:16:05,028 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:16:05,028 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:16:06,613 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:16:06,613 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:16:08,460 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:16:08,461 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:16:09,832 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:16:09,832 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:16:11,379 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:16:11,380 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:16:13,033 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:16:13,033 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:17:39,113 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-24 16:17:39,121 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:17:39,121 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:17:47,454 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:17:47,454 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:17:49,453 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:17:49,453 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:17:50,773 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:17:50,773 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:17:52,247 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:17:52,248 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:17:54,839 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:17:54,839 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:17:56,964 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:17:56,964 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:17:58,268 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:17:58,268 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:18:09,545 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:18:09,545 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:18:34,687 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-24 16:18:34,695 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:18:34,695 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:18:38,758 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:18:38,759 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:18:40,469 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:18:40,469 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:18:41,395 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:18:41,396 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:18:42,877 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:18:42,877 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:18:44,676 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:18:44,676 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:18:45,961 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:18:45,962 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:18:46,834 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:18:46,834 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:18:47,585 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:18:47,585 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:25:12,966 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-24 16:25:12,983 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:25:12,984 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:25:17,022 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:25:17,022 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:25:19,858 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:25:19,859 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:25:20,854 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:25:20,854 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:25:32,306 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:25:32,306 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:25:34,876 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:25:34,876 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:25:36,688 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:25:36,688 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:25:38,094 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:25:38,094 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:25:39,573 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:25:39,573 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:26:26,120 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-24 16:26:26,135 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:26:26,135 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:26:29,858 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:26:29,858 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:26:31,732 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:26:31,733 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:26:32,859 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:26:32,859 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:26:33,912 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:26:33,912 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:26:37,495 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:26:37,495 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:26:39,032 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:26:39,032 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:26:41,285 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:26:41,285 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:26:42,226 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:26:42,226 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:29:26,872 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-24 16:29:26,883 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:29:26,883 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:29:29,910 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:29:29,910 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:29:31,424 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:29:31,424 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:29:32,499 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:29:32,499 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:29:33,938 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:29:33,939 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:29:36,403 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:29:36,403 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:29:38,096 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:29:38,097 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:29:39,625 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:29:39,625 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:29:40,804 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:29:40,804 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:30:52,831 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-24 16:30:52,848 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:30:52,848 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:31:16,851 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:31:16,851 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:31:18,751 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:31:18,751 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:31:51,024 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:31:51,024 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:32:02,784 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:32:02,785 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:32:05,613 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:32:05,614 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:32:17,827 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:32:17,827 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:32:50,770 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:32:50,770 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:33:22,952 - cdn_check.core.db_manager - ERROR - 保存检测结果失败: Error binding parameter 4: type 'list' is not supported
+2025-03-24 16:33:22,952 - cdn_check.app - WARNING - 保存检测结果到数据库失败
+2025-03-24 16:34:43,418 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-24 16:36:49,327 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-24 16:44:11,405 - cdn_check.core.ip_analyzer - WARNING - GeoIP2城市数据库不可用
+2025-03-26 13:44:30,898 - cdn_check.core.plugin_manager - WARNING - 导入模块失败: cdn_check.plugins.dns_plugin - No module named 'cachetools'
+2025-03-26 13:44:30,937 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 13:44:30,945 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-26 13:44:30,945 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-26 13:44:31,223 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-26 13:44:31,223 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-26 13:44:33,254 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-26 13:44:33,254 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-26 13:44:34,023 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-26 13:44:34,023 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-26 13:44:34,288 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-26 13:44:34,288 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-26 13:44:34,487 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-26 13:44:34,487 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-26 13:44:35,156 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-26 13:44:35,156 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-26 13:44:35,431 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-26 13:44:35,432 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-26 13:44:35,662 - cdn_check.core.plugin_manager - WARNING - 插件 dns_resolver 不存在
+2025-03-26 13:44:35,662 - cdn_check.app - ERROR - 插件不存在: dns_resolver
+2025-03-26 13:46:13,837 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 13:50:45,679 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 13:53:43,676 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 13:54:28,034 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 13:55:12,183 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 13:55:38,554 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 13:57:10,210 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 13:58:08,251 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 14:13:08,218 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 14:13:32,997 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 14:13:56,684 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 14:20:29,222 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 15:06:17,274 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 16:10:02,252 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-03-26 16:10:29,447 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-04-01 16:57:11,171 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-04-01 16:57:11,173 - cdn_check.core.plugin_manager - ERROR - 实例化插件 cdn_detector 时出错: 'CDNDetector' object has no attribute '_load_cdn_json'
+2025-04-01 16:57:14,793 - cdn_check.plugins.cdn_plugin - ERROR - CDN检测失败: 'CDNDetector' object has no attribute 'detect'
+Traceback (most recent call last):
+  File "/home/user/2/cdn_check-main/cdn_check/plugins/cdn_plugin.py", line 63, in execute
+    detection_result = self._detector.detect(data)
+                       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CDNDetector' object has no attribute 'detect'
+2025-04-01 16:57:14,795 - cdn_check.app - ERROR - 保存检测结果到数据库时出错: can only join an iterable
+Traceback (most recent call last):
+  File "/home/user/2/cdn_check-main/cdn_check/app.py", line 368, in _save_result_to_db
+    session_id = self._db.save_detection_result(target, result)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/2/cdn_check-main/cdn_check/core/db_manager.py", line 180, in save_detection_result
+    cdn_provider = ','.join(result.get('cdn_provider'))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can only join an iterable
+2025-04-01 17:00:31,729 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-04-01 17:00:35,291 - cdn_check.plugins.cdn_plugin - ERROR - CDN检测失败: 'CDNDetector' object has no attribute 'detect'
+Traceback (most recent call last):
+  File "/home/user/2/cdn_check-main/cdn_check/plugins/cdn_plugin.py", line 63, in execute
+    detection_result = self._detector.detect(data)
+                       ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CDNDetector' object has no attribute 'detect'
+2025-04-01 17:00:51,035 - cdn_check.core.plugin_manager - ERROR - 处理模块时出错: cdn_check.plugins.cdn_plugin - unexpected indent (cdn_detector.py, line 464)
+2025-04-01 17:00:51,122 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-04-01 17:00:54,685 - cdn_check.core.plugin_manager - WARNING - 插件 cdn_detector 不存在
+2025-04-01 17:00:54,685 - cdn_check.app - ERROR - 插件不存在: cdn_detector
+2025-04-01 17:00:54,693 - cdn_check.core.plugin_manager - WARNING - 插件 cdn_detector 不存在
+2025-04-01 17:03:20,093 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-04-01 17:08:04,222 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
+2025-04-01 17:09:09,010 - cdn_check.core.ip_analyzer - WARNING - geoip2库未安装，地理位置分析功能将受限
