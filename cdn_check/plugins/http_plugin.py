@@ -68,7 +68,20 @@ class HTTPPlugin(PluginBase):
         
         # 添加协议前缀（如果没有）
         if not url.startswith(('http://', 'https://')):
-            url = 'http://' + url
+            # 检查是否为IP地址
+            is_ip = False
+            try:
+                import ipaddress
+                ipaddress.ip_address(url.split(':')[0] if ':' in url else url)
+                is_ip = True
+            except ValueError:
+                is_ip = False
+                
+            # 对IP地址也尝试HTTPS
+            if is_ip:
+                url = 'https://' + url
+            else:
+                url = 'http://' + url
         
         result = {
             'plugin': self.plugin_name,
@@ -111,6 +124,44 @@ class HTTPPlugin(PluginBase):
             result['result']['server'] = response.headers.get('Server')
             result['result']['content_type'] = response.headers.get('Content-Type')
             
+            # 如果是HTTPS请求但状态码是错误的，尝试HTTP
+            if url.startswith('https://') and (response.status_code >= 400 or len(response.headers) == 0):
+                http_url = 'http://' + url[8:]  # 替换https://为http://
+                logger.info(f"HTTPS请求返回错误或无头信息，尝试HTTP: {http_url}")
+                
+                try:
+                    http_response = self._session.request(
+                        method=method,
+                        url=http_url,
+                        headers=headers,
+                        timeout=timeout,
+                        proxies=proxies,
+                        verify=False,  # HTTP不需要验证SSL
+                        allow_redirects=follow_redirects
+                    )
+                    
+                    # 如果HTTP请求成功且返回了头信息，使用HTTP的结果
+                    if http_response.status_code < 400 and len(http_response.headers) > 0:
+                        response = http_response
+                        result['result']['status_code'] = response.status_code
+                        result['result']['headers'] = dict(response.headers)
+                        result['result']['content_length'] = len(response.content)
+                        result['result']['server'] = response.headers.get('Server')
+                        result['result']['content_type'] = response.headers.get('Content-Type')
+                        logger.info(f"成功使用HTTP获取头信息: {http_url}")
+                except Exception as e:
+                    logger.warning(f"HTTP请求失败: {str(e)}")
+            
+            response_time = time.time() - start_time
+            
+            # 记录基本信息
+            result['result']['status_code'] = response.status_code
+            result['result']['headers'] = dict(response.headers)
+            result['result']['content_length'] = len(response.content)
+            result['result']['response_time'] = round(response_time, 3)
+            result['result']['server'] = response.headers.get('Server')
+            result['result']['content_type'] = response.headers.get('Content-Type')
+            
             # 记录重定向链
             if hasattr(response, 'history') and response.history:
                 for r in response.history:
@@ -127,7 +178,10 @@ class HTTPPlugin(PluginBase):
             # 检查可能的CDN相关头部
             cdn_headers = ['x-cdn', 'x-cache', 'x-served-by', 'x-amz-cf-id', 'x-edge-location',
                           'x-cache-hits', 'cf-ray', 'x-fastly', 'via', 'x-amz-cf-pop',
-                          'x-powered-by-plesk', 'x-proxy-cache', 'x-cache-status']
+                          'x-powered-by-plesk', 'x-proxy-cache', 'x-cache-status',
+                          # 添加网宿CDN常用头部
+                          'x-swift-cachetime', 'x-ws-request-id', 'x-ws-ip',
+                          'x-ws-cache', 'x-ws-cache-status', 'x-ws-edge-server']
             
             for header in cdn_headers:
                 if header.lower() in response.headers:

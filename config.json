@@ -40,7 +40,7 @@
     {
       "header": "Server",
       "patterns": [
-        "cloudflare|fastly|akamai|ATS|ESF|sucuri|cloudfront|varnish|cdn|edge|netlify|stackpath"
+        "cloudflare|fastly|akamai|ATS|ESF|sucuri|cloudfront|varnish|cdn|edge|netlify|stackpath|wangsu|chinanetcenter|wscdn|lxcdn"
       ],
       "description": "Server 头直接包含 CDN 标识"
     },
@@ -54,7 +54,7 @@
     {
       "header": "Via",
       "patterns": [
-        "varnish|akamai|cloudfront|cloudflare|fastly|cdn|proxy"
+        "varnish|akamai|cloudfront|cloudflare|fastly|cdn|proxy|wangsu|chinanetcenter"
       ],
       "description": "请求经过 CDN 节点或代理"
     },
@@ -74,6 +74,36 @@
       "header": "CF-Cache-Status",
       "patterns": ["HIT|MISS|DYNAMIC"],
       "description": "缓存状态头（即使不关注厂商也可作为 CDN 信号）"
+    },
+    {
+      "header": "X-Swift-CacheTime",
+      "patterns": [".+"],
+      "description": "网宿CDN缓存时间"
+    },
+    {
+      "header": "X-WS-Request-ID",
+      "patterns": [".+"],
+      "description": "网宿CDN请求ID"
+    },
+    {
+      "header": "X-WS-Cache",
+      "patterns": [".+"],
+      "description": "网宿CDN缓存状态"
+    },
+    {
+      "header": "X-WS-Cache-Status",
+      "patterns": [".+"],
+      "description": "网宿CDN缓存状态"
+    },
+    {
+      "header": "X-WS-IP",
+      "patterns": [".+"],
+      "description": "网宿CDN客户端IP"
+    },
+    {
+      "header": "X-WS-Edge-Server",
+      "patterns": [".+"],
+      "description": "网宿CDN边缘服务器"
     }
   ]
 } 

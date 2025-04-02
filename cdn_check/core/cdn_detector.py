@@ -410,9 +410,14 @@ class CDNDetector:
         Returns:
             (是否匹配, 匹配的指标列表)
         """
-        if not headers or not self._http_header_rules:
+        if not headers:
+            logger.warning("HTTP头为空，无法检查CDN特征")
             return False, []
             
+        if not self._http_header_rules:
+            logger.warning("HTTP头规则为空，无法检查CDN特征")
+            return False, []
+        
         indicators = []
         
         # 将所有header名称和值转换为小写
@@ -437,6 +442,11 @@ class CDNDetector:
                 ('fastly', 'Fastly'),
                 ('azure', 'Azure CDN'),
                 ('aliyun', 'Alibaba Cloud CDN'),
+                ('wangsu', '网宿 CDN'),
+                ('chinanetcenter', '网宿 CDN'),
+                ('wscdn', '网宿 CDN'),
+                ('wswebpic', '网宿 CDN'),
+                ('lxcdn', '网宿 CDN'),
                 ('cdn', '可能是CDN')
             ]
             
@@ -453,12 +463,26 @@ class CDNDetector:
                 ('cloudfront', 'Amazon CloudFront'),
                 ('fastly', 'Fastly'),
                 ('varnish', 'Varnish'),
+                ('wangsu', '网宿 CDN'),
+                ('chinanetcenter', '网宿 CDN'),
+                ('wscdn', '网宿 CDN'),
                 ('cdn', '可能是CDN')
             ]
             
             for keyword, provider in cdn_keywords:
                 if keyword in via_value:
                     indicators.append(f"Via头特征匹配: via={via_value} ({provider})")
+        
+        # 检查网宿CDN特有的头部
+        wangsu_headers = [
+            'x-swift-cachetime', 'x-ws-request-id', 'x-ws-ip',
+            'x-ws-cache', 'x-ws-cache-status', 'x-ws-edge-server'
+        ]
+        
+        for header in wangsu_headers:
+            if header in headers_lower:
+                indicators.append(f"网宿CDN头部匹配: {header}={headers_lower[header]}")
+                
         return len(indicators) > 0, indicators
         
     def detect(self, data: Dict[str, Any]) -> Dict[str, Any]:
@@ -558,8 +582,16 @@ class CDNDetector:
                         logger.error(f"IP范围检查出错: {str(e)}")
             
             # HTTP头部匹配 - 对IP地址检测给予更高权重
-            http_match_score = 0.5 if is_ip_address else 0.3
+            http_match_score = 0.6 if is_ip_address else 0.3  # 增加IP地址模式下HTTP头部的权重
             headers = data.get('http_headers', {})
+            
+            # 记录HTTP头信息用于调试
+            if headers:
+                logger.info(f"检测到HTTP头信息: {json.dumps(headers, ensure_ascii=False)}")
+            else:
+                logger.warning("未检测到HTTP头信息")
+                
+            # 检查HTTP头部匹配
             has_headers, header_indicators = _check_cdn_indicators_in_headers(headers, rule)
             if has_headers:
                 scores[provider] += http_match_score
@@ -717,7 +749,7 @@ class CDNDetector:
                     
                     # 保存更新后的规则
                     self.save_rules()
-        
+    
     def _load_cdn_json(self, file_path: str) -> None:
         """
         加载 CDN.JSON 格式的规则文件
@@ -754,4 +786,3 @@ class CDNDetector:
             logger.info(f"从 {file_path} 加载了 {len(data['Item'])} 条 CDN 规则")
         except Exception as e:
             logger.error(f"加载 CDN.JSON 失败: {str(e)}")
-

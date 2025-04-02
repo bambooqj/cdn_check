@@ -215,19 +215,38 @@ class CDNCheckApp:
             # 构建HTTP请求URL
             http_url = target
             if not http_url.startswith(('http://', 'https://')):
-                # 对IP地址和域名都尝试HTTPS和HTTP
+                # 对IP地址和域名都优先尝试HTTPS
                 https_url = f"https://{hostname}"
                 http_url = f"http://{hostname}"
                 
+                # 设置请求参数，对IP地址特殊处理
+                request_params = {
+                    'url': https_url,
+                    'verify_ssl': not is_ip_address,  # IP地址不验证SSL证书
+                    'timeout': 15 if is_ip_address else 10,  # IP地址增加超时时间
+                    'headers': {
+                        # 使用多个常见的Host头，增加成功率
+                        'Host': 'default.chinanetcenter.com' if 'chinanetcenter' in hostname else hostname,
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                        'Accept-Encoding': 'gzip, deflate, br',
+                        'Connection': 'keep-alive'
+                    },
+                    'get_content': False,  # 不需要获取页面内容，只需要头信息
+                    'follow_redirects': True  # 跟随重定向
+                }
+                
                 # 先尝试HTTPS
-                https_result = await self._run_plugin('http_requester', {'url': https_url})
+                https_result = await self._run_plugin('http_requester', request_params)
                 if https_result and https_result.get('success', False):
                     http_result = https_result
                     http_url = https_url
                     logger.info(f"成功使用HTTPS访问: {https_url}")
                 else:
                     # 如果HTTPS失败，尝试HTTP
-                    http_result = await self._run_plugin('http_requester', {'url': http_url})
+                    request_params['url'] = http_url
+                    http_result = await self._run_plugin('http_requester', request_params)
                     logger.info(f"使用HTTP访问: {http_url}")
             else:
                 # 如果已经指定了协议，直接使用
@@ -266,15 +285,26 @@ class CDNCheckApp:
                         ip_info[ip] = ip_result
             
             # 准备CDN检测数据
+            # 优先使用cert_analyzer获取的HTTP头信息
+            http_headers = cert_result.get('http_headers', {}) if cert_result else {}
+            if not http_headers and http_result:
+                http_headers = http_result.get('headers', {})
+                
             cdn_data = {
                 'domain': hostname,
                 'ips': ip_list,
                 'cname_chain': cname_list,
-                'http_headers': http_result.get('headers', {}) if http_result else {},
+                'http_headers': http_headers,
                 'cert': cert_result,
                 'ip_info': ip_info,
                 'is_ip_address': is_ip_address  # 添加标志表明目标是IP地址
             }
+            
+            # 记录HTTP头信息
+            if http_headers:
+                logger.info(f"检测到HTTP头信息: {json.dumps(http_headers, ensure_ascii=False)}")
+            else:
+                logger.warning("未检测到HTTP头信息")
             
             # 执行CDN检测
             cdn_result = await self._run_plugin('cdn_detector', cdn_data)

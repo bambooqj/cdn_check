@@ -7,7 +7,8 @@ import socket
 import logging
 import json
 import os
-from typing import Dict, Any, List, Optional
+import requests
+from typing import Dict, Any, List, Optional, Tuple
 from cryptography import x509
 from cryptography.hazmat.primitives import hashes
 from cryptography.x509.oid import NameOID
@@ -161,14 +162,14 @@ class CertAnalyzer:
 
     def get_certificate(self, hostname: str, port: Optional[int] = None) -> Dict[str, Any]:
         """
-        获取SSL/TLS证书
+        获取SSL/TLS证书和HTTP头信息
         
         Args:
             hostname: 主机名或IP地址
             port: 端口号，如果为None则使用默认端口
             
         Returns:
-            证书信息字典
+            证书信息字典和HTTP头信息
         """
         if port is None:
             port = self._port
@@ -243,8 +244,15 @@ class CertAnalyzer:
                                 'success': True,
                                 'cert': cert_info
                             })
+                            # 尝试获取HTTP头信息
+                            http_headers = self._get_http_headers(hostname)
+                            if http_headers:
+                                result['http_headers'] = http_headers
+                                logger.info(f"成功获取IP地址证书和HTTP头信息: {hostname}:{port}")
+                            else:
+                                logger.warning(f"获取IP地址证书成功，但获取HTTP头信息失败: {hostname}:{port}")
                             
-                            logger.info(f"成功获取IP地址证书: {hostname}:{port}")
+                            return result
                             return result
                     else:
                         # 对域名使用SNI
@@ -264,8 +272,15 @@ class CertAnalyzer:
                                 'success': True,
                                 'cert': cert_info
                             })
+                            # 尝试获取HTTP头信息
+                            http_headers = self._get_http_headers(hostname)
+                            if http_headers:
+                                result['http_headers'] = http_headers
+                                logger.info(f"成功获取证书和HTTP头信息: {hostname}:{port}")
+                            else:
+                                logger.warning(f"获取证书成功，但获取HTTP头信息失败: {hostname}:{port}")
                             
-                            logger.info(f"成功获取证书: {hostname}:{port}")
+                            return result
                             return result
 
             except socket.timeout:
@@ -405,6 +420,63 @@ class CertAnalyzer:
                     result['cdn_indicators'].append(f"证书匹配CDN规则: {provider} (关键字: {keyword})")
                     return
 
+    def _get_http_headers(self, hostname: str) -> Dict[str, str]:
+        """
+        获取HTTP头信息
+        
+        Args:
+            hostname: 主机名或IP地址
+            
+        Returns:
+            HTTP头信息字典
+        """
+        headers = {}
+        
+        # 尝试HTTPS
+        try:
+            # 设置请求头
+            request_headers = {
+                'Host': 'default.chinanetcenter.com' if 'chinanetcenter' in hostname else hostname,
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Connection': 'keep-alive'
+            }
+            
+            # 发送HTTPS请求
+            response = requests.get(
+                f"https://{hostname}",
+                headers=request_headers,
+                timeout=10,
+                verify=False  # 不验证SSL证书
+            )
+            
+            if response.status_code < 400:
+                headers = dict(response.headers)
+                logger.info(f"成功通过HTTPS获取HTTP头信息: {hostname}")
+                return headers
+        except Exception as e:
+            logger.warning(f"通过HTTPS获取HTTP头信息失败: {hostname} - {str(e)}")
+        
+        # 如果HTTPS失败，尝试HTTP
+        try:
+            # 发送HTTP请求
+            response = requests.get(
+                f"http://{hostname}",
+                headers=request_headers,
+                timeout=10
+            )
+            
+            if response.status_code < 400:
+                headers = dict(response.headers)
+                logger.info(f"成功通过HTTP获取HTTP头信息: {hostname}")
+                return headers
+        except Exception as e:
+            logger.warning(f"通过HTTP获取HTTP头信息失败: {hostname} - {str(e)}")
+        
+        return headers
+        
     def close(self) -> None:
         """关闭分析器，释放资源"""
         pass 
